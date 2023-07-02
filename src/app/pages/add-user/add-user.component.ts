@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../user/user';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-user',
@@ -18,7 +19,7 @@ export class AddUserComponent {
     {durum:"Pasif", isActive:false}
   ]
 
-  constructor(private userService: UserService, fb: FormBuilder) {
+  constructor(private userService: UserService, fb: FormBuilder, private router:Router) {
     this.addUserForm = fb.group({
       userId: '', // make id unique
       username: '',
@@ -36,6 +37,7 @@ export class AddUserComponent {
     this.user = this.addUserForm.value;
     this.addUser(this.user);
     alert("Başarıyla eklendi!")
+    this.router.navigateByUrl("/user")
   }
 }
 
