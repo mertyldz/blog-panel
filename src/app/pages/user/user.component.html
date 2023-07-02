@@ -1,8 +1,44 @@
 <div class="container">
     <div class="row mt-3">
-        <div class="col-md-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum illum error dignissimos fuga quod itaque placeat porro praesentium nobis minima eligendi dolorum tenetur temporibus obcaecati et quis id repellat tempore labore, incidunt, assumenda corrupti blanditiis nulla mollitia. Dolorem perspiciatis ut totam distinctio sunt voluptatibus possimus veniam laborum cumque minima sequi corrupti, dolor id. Sapiente vel ipsum quod non impedit rem explicabo! Dolores incidunt quae ipsa sit ipsam optio provident asperiores adipisci nesciunt itaque placeat libero assumenda eius iusto quam magnam quisquam voluptate, neque iste minus tempore illo tempora. Rem quam tempore autem aliquid dolor saepe temporibus cumque minus, ex sint amet expedita dolores nesciunt adipisci! Doloribus molestias repellat dolorem vero illum libero ad iusto ratione, earum voluptatum harum nesciunt, nostrum modi molestiae. Ut explicabo atque saepe. Deserunt sint voluptatibus harum velit aspernatur odit eveniet vero quidem? Quasi placeat modi dolorem, beatae soluta magni porro, natus consectetur explicabo harum quibusdam voluptatem.</div>
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item" [routerLink]="'/user'"><link rel="stylesheet" >Kullanıcıları görüntüle</li>
+                <li class="list-group-item" [routerLink]="'/user/add'">Kullanıcı ekle</li>
+              </ul>
+        </div>
+        
         <div class="col-md-9">
-            <p *ngFor="let user of users">{{user.username}}</p>
+            <table class="table">
+            <thead>
+                <th>userId</th>
+                <th>username</th>
+                <th>email</th>
+                <th>creationDate</th>
+                <th>isActive</th>
+                <th>Sil</th>
+                <th>Düzenle</th>
+            </thead>
+            <tbody class="" *ngFor="let user of users">
+                <td>{{user.userId}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.creationDate}}</td>
+                <td>{{user.isActive}}</td>
+                <td><button (click)="removeUser(user.userId)">Sil</button></td>
+                <td><button>Düzenle</button></td>
+            </tbody>
+            </table>
+
+            <hr>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
         </div>
     </div>
 </div>

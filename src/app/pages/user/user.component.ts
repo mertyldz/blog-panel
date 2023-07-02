@@ -12,5 +12,7 @@ export class UserComponent {
   constructor(private userService:UserService){}
 
   users:User[] = this.userService.getUserList();
+
+  removeUser(id:number){this.userService.deleteUser(id)}
   
 }
