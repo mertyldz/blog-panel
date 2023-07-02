@@ -80,19 +80,31 @@ export class UserService {
 
   constructor() {}
 
+  getIndex(id: number): number {
+    for (let i = 0; i < this.userList.length; i++) {
+      if (this.userList[i].userId === id) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   getUserList(): User[] {
     return this.userList;
   }
 
   deleteUser(id: number): void {
-    for (let i = 0; i < this.userList.length; i++) {
-      if (this.userList[i].userId === id) {
-        this.userList.splice(i, 1);
-      }
-    }
+    let index = this.getIndex(id);
+    this.userList.splice(index, 1);
   }
 
   addUser(user: User): void {
     this.userList.push(user);
+  }
+
+  updateUser(id: number, username:string, email:string){
+    let index = this.getIndex(id);
+    this.userList[index].username=username;
+    this.userList[index].email=email;
   }
 }
