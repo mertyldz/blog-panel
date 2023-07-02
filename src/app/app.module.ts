@@ -9,7 +9,7 @@ import { PostComponent } from './pages/post/post.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { AddUserComponent } from './pages/add-user/add-user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
