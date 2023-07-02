@@ -5,11 +5,12 @@ import { PostComponent } from './pages/post/post.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { AddUserComponent } from './pages/add-user/add-user.component';
-
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'user/add', component: AddUserComponent },
+  { path: 'user/:id', component: UpdateUserComponent },
   { path: 'post', component: PostComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'comment', component: CommentComponent },

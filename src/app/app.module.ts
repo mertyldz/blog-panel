@@ -10,6 +10,8 @@ import { CategoryComponent } from './pages/category/category.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { AddUserComponent } from './pages/add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import { AsideComponent } from './commons/aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PostComponent,
     CategoryComponent,
     CommentComponent,
-    AddUserComponent
+    AddUserComponent,
+    UpdateUserComponent,
+    AsideComponent
   ],
   imports: [
     BrowserModule,
