@@ -78,11 +78,17 @@ export class UserService {
     },
   ];
 
-  constructor() {
-    console.log('User service instanciated');
-  }
+  constructor() {}
 
   getUserList(): User[] {
     return this.userList;
+  }
+
+  deleteUser(id:number){
+    for(let i = 0; i<this.userList.length; i++){
+      if(this.userList[i].userId === id){
+        this.userList.splice(i,1)
+      }
+    }
   }
 }
