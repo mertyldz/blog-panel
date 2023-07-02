@@ -8,7 +8,7 @@ import { UserComponent } from './pages/user/user.component';
 import { PostComponent } from './pages/post/post.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { CommentComponent } from './pages/comment/comment.component';
-import { AddUserComponent } from './add-user/add-user.component';
+import { AddUserComponent } from './pages/add-user/add-user.component';
 
 @NgModule({
   declarations: [
