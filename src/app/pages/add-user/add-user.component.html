@@ -1,33 +1,40 @@
 <div class="container">
     <div class="row mt-3">
+        <div class="col-md-3">
+            <app-aside></app-aside>
+        </div>
 
-        <form [formGroup]="addUserForm" (ngSubmit)="save()">
-            <div class="mb-3">
-                <label for="userId" class="form-label">userId</label>
-                <input type="text" class="form-control" formControlName="userId">
-            </div>
-            <div class="mb-3">
-                <label for="username" class="form-label">username</label>
-                <input type="text" class="form-control" formControlName="username">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">email</label>
-                <input type="text" class="form-control" formControlName="email">
-            </div>
-            <div class="mb-3">
-                <label for="creationDate" class="form-label">creationDate</label>
-                <input type="text" class="form-control" formControlName="creationDate">
-            </div>
-            <div class="mb-3" *ngFor="let active of isActiveMenu">
 
-                <div class="form-check">
-                    <input type="radio" [value]="active.isActive" class="form-check-input" formControlName="isActive">
-                    <label class="form-check-label" for="isActive"> {{active.durum}}</label>
+        <div class="col-md-9">
+            <form [formGroup]="addUserForm" (ngSubmit)="save()">
+                <div class="mb-3">
+                    <label for="userId" class="form-label">userId</label>
+                    <input type="text" class="form-control" formControlName="userId">
                 </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Kaydet</button>
+                <div class="mb-3">
+                    <label for="username" class="form-label">username</label>
+                    <input type="text" class="form-control" formControlName="username">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">email</label>
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="mb-3">
+                    <label for="creationDate" class="form-label">creationDate</label>
+                    <input type="text" class="form-control" formControlName="creationDate">
+                </div>
+                <div class="mb-3" *ngFor="let active of isActiveMenu">
+    
+                    <div class="form-check">
+                        <input type="radio" [value]="active.isActive" class="form-check-input" formControlName="isActive">
+                        <label class="form-check-label" for="isActive"> {{active.durum}}</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Kaydet</button>
+    
+            </form>
+        </div>
 
-        </form>
 
     </div>
 </div>
