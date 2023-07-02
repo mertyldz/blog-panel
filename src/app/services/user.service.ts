@@ -84,11 +84,15 @@ export class UserService {
     return this.userList;
   }
 
-  deleteUser(id:number){
-    for(let i = 0; i<this.userList.length; i++){
-      if(this.userList[i].userId === id){
-        this.userList.splice(i,1)
+  deleteUser(id: number): void {
+    for (let i = 0; i < this.userList.length; i++) {
+      if (this.userList[i].userId === id) {
+        this.userList.splice(i, 1);
       }
     }
+  }
+
+  addUser(user: User): void {
+    this.userList.push(user);
   }
 }

@@ -1,1 +1,34 @@
-<p>add-user works!</p>
+<div class="container">
+    <div class="row mt-3">
+
+        <form [formGroup]="addUserForm" (ngSubmit)="save()">
+            <div class="mb-3">
+                <label for="userId" class="form-label">userId</label>
+                <input type="text" class="form-control" formControlName="userId">
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">username</label>
+                <input type="text" class="form-control" formControlName="username">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">email</label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="creationDate" class="form-label">creationDate</label>
+                <input type="text" class="form-control" formControlName="creationDate">
+            </div>
+            <div class="mb-3">
+                <label for="isActive" class="form-label">isActive</label>
+                <br>
+                <select name="isActive">
+                    <option value=true formControlName="isActive">Aktif</option>
+                    <option value=false formControlName="isActive">Pasif</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Kaydet</button>
+
+        </form>
+
+    </div>
+</div>
