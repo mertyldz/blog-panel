@@ -13,13 +13,18 @@ export class AddUserComponent {
   user: User={
     userId:0, username:'', email:'', creationDate:'', isActive: false};
 
+  isActiveMenu:Status[] = [
+    {durum:"Aktif", isActive:true},
+    {durum:"Pasif", isActive:false}
+  ]
+
   constructor(private userService: UserService, fb: FormBuilder) {
     this.addUserForm = fb.group({
       userId: '', // make id unique
       username: '',
       email: '',
       creationDate: '',
-      isActive: true,
+      isActive: ['1'],
     });
   }
 
@@ -32,4 +37,9 @@ export class AddUserComponent {
     this.addUser(this.user);
     alert("Başarıyla eklendi!")
   }
+}
+
+export interface Status{
+  durum:string,
+  isActive:boolean
 }
