@@ -7,6 +7,7 @@ import { CommentComponent } from './pages/comment/comment.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
+  { path: 'user/add', component: UserComponent },
   { path: 'post', component: PostComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'comment', component: CommentComponent },

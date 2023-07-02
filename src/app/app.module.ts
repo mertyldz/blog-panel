@@ -8,6 +8,7 @@ import { UserComponent } from './pages/user/user.component';
 import { PostComponent } from './pages/post/post.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { CommentComponent } from './pages/comment/comment.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CommentComponent } from './pages/comment/comment.component';
     UserComponent,
     PostComponent,
     CategoryComponent,
-    CommentComponent
+    CommentComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
