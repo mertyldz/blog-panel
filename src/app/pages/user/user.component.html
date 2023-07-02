@@ -1,14 +1,8 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-3">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a class="text-body" [routerLink]="'/user'" [routerLinkActive]="'text-primary'">Kullanıcıları
-                        görüntüle</a>
-                </li>
-                <li class="list-group-item">
-                    <a class="text-body" [routerLink]="'/user/add'" [routerLinkActive]="'text-primary'">Kullanıcı ekle</a>
-            </ul>
+            <app-aside></app-aside>
+
         </div>
 
         <div class="col-md-9">
@@ -29,7 +23,7 @@
                     <td>{{user.creationDate}}</td>
                     <td>{{user.isActive}}</td>
                     <td><button (click)="removeUser(user.userId)">Sil</button></td>
-                    <td><button (click)="updateUser(user.userId)">Düzenle</button></td>
+                    <td><button (click)="updateUser(user.userId)" [routerLink]="['/user/', user.userId]">Düzenle</button></td>
                 </tbody>
             </table>
         </div>
