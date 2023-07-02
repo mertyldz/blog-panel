@@ -14,5 +14,6 @@ export class UserComponent {
   users:User[] = this.userService.getUserList();
 
   removeUser(id:number){this.userService.deleteUser(id)}
+  updateUser(id:number){console.log(`${id} + " güncellendi!`)}
   
 }
