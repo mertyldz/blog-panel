@@ -9,6 +9,7 @@
                     <th>Oluşturulma Tarihi</th>
                     <th>Sil</th>
                     <th>Düzenle</th>
+                    <th>Detay</th>
                 </thead>
                 <tbody *ngFor="let category of categories">
                     <td>{{category.categoryId}}</td>
@@ -16,6 +17,7 @@
                     <td>{{category.creationDate}}</td>                  
                     <td><button type="button" class="btn btn-danger" (click)="removeCategory(category.categoryId)">Sil</button></td>
                     <td><button type="button" class="btn btn-warning" (click)="updateCategory()" [routerLink]="['/category/edit', category.categoryId]">Düzenle</button></td>
+                    <td><button type="button" class="btn btn-success" [routerLink]="['/category/detail', category.categoryId]">Detaylar</button></td>
                 </tbody>
             </table>
 
