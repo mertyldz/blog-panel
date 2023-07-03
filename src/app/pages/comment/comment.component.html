@@ -1,1 +1,32 @@
-<p>comment works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"><app-aside-comment></app-aside-comment></div>
+        <div class="col-md-9">
+            <table class="table table-light table-striped table-hover ">
+                <thead class="text-center">
+                    <th>commentId</th>
+                    <th>postId</th>
+                    <th>userId</th>
+                    <th>comment</th>
+                    <th>creationDate</th>
+                    <th>isConfirmed</th>
+                    <th>Sil</th>
+                    <th>Detaylar</th>
+                </thead>
+                <tbody *ngFor="let comment of comments">
+                    <tr>
+                        <td>{{comment.commentId}}</td>
+                        <td>{{comment.postId}}</td>
+                        <td>{{comment.userId}}</td>
+                        <td>{{comment.comment}}</td>
+                        <td>{{comment.creationDate}}</td>
+                        <td>{{comment.isConfirmed}}</td>
+                        <td><button type="button" class="btn btn-danger" (click)="removeComment(comment.commentId)">Sil</button></td>
+                        <td><button type="button" class="btn btn-success"
+                                [routerLink]="['/comment/detail', comment.commentId]">Detaylar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
