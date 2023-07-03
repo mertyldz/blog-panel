@@ -6,6 +6,7 @@ import { User } from '../../user/user';
 import { UserService } from 'src/app/services/user.service';
 import { Category } from '../../category/category';
 import { CategoryService } from 'src/app/services/category.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-post',
@@ -32,9 +33,9 @@ export class AddPostComponent {
     { status: 'Yayında Değil', isPublished: false },
   ];
 
-  constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService) {
+  constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService, private router:Router) {
     this.addPostForm = fb.group({
-      postId: 0,
+      postId: (this.postService.getPosts().length + 1),
       userId: 1,
       categoryId: 1,
       title: '',
@@ -48,10 +49,9 @@ export class AddPostComponent {
   save() {
     this.post = this.addPostForm.value;
     this.postService.addPost(this.post)
-    console.log(this.post.userId)
+    alert("Post başarıyla eklendi!")
+    this.router.navigateByUrl('/post')
   }
-
-
 
 }
 export interface PublishedStatus {
