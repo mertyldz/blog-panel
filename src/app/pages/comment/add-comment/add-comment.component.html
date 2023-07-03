@@ -1,1 +1,44 @@
-<p>add-comment works!</p>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-3"><app-aside-comment></app-aside-comment></div>
+        <div class="col-md-9">
+
+            <div class="col-md-9">
+                <form [formGroup]="addCommentForm" (submit)="addComment()">
+                    <div class="mb-3">
+                        <label class="form-label">Yorum Numarası</label>
+                        <input type="text" class="form-control" formControlName="commentId">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Post Numarası</label>
+                        <input type="text" class="form-control" formControlName="postId">
+                    </div>
+
+                    <!-- Username dropdown -->
+                    <label class="form-label" for="categoryId">Kullanıcı</label>
+                    <select class="form-select" formControlName="userId">
+                        <option *ngFor="let user of userList" value="{{user.userId}}">{{user.username}}</option>
+                    </select>
+    
+                    <div class="mb-3">
+                        <label class="form-label">Yorum</label>
+                        <input type="text" class="form-control" formControlName="comment">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Oluşturulma Tarihi</label>
+                        <input type="text" class="form-control" formControlName="creationDate">
+                    </div>
+
+                    <label class="form-label">Onaylandı Mı?</label>
+                    <div class="form-check" *ngFor="let confirm of confirmMenu">
+                        <input type="radio" [value]="confirm.value" class="form-check-input" formControlName="isConfirmed">
+                        <label class="form-check-label" for="isPublished"> {{confirm.status}}</label>
+                    </div>
+
+
+
+
+                    <button type="submit">Ekle</button>
+                </form>
+            </div>
+        </div>
