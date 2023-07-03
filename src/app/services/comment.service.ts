@@ -854,5 +854,11 @@ addComment(comment:Comment){
 
 }
 
+updateComment(selectedId:number,comment:Comment){
+  this.comments[selectedId] = comment;
+  alert("Yorum güncellendi!")
+  this.router.navigateByUrl("/comment")
+}
+
 
 }

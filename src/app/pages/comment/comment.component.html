@@ -22,6 +22,8 @@
                         <td>{{comment.creationDate}}</td>
                         <td>{{comment.isConfirmed}}</td>
                         <td><button type="button" class="btn btn-danger" (click)="removeComment(comment.commentId)">Sil</button></td>
+                        <td><button type="button" class="btn btn-warning"
+                                [routerLink]="['/comment/edit', comment.commentId]">Düzenle</button></td>
                         <td><button type="button" class="btn btn-success"
                                 [routerLink]="['/comment/detail', comment.commentId]">Detaylar</button></td>
                     </tr>
