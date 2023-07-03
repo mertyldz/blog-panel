@@ -25,7 +25,7 @@ export class AddUserComponent {
       username: '',
       email: '',
       creationDate: '',
-      isActive: ['1'],
+      isActive: false,
     });
   }
 
