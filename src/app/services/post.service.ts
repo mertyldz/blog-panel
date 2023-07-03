@@ -577,4 +577,9 @@ export class PostService {
     let index = this.getIndex(id);
     this.posts.splice(index, 1);
   }
+
+  getPostById(id: number){
+    let index = this.getIndex(id);
+    return this.posts[index];
+  }
 }
