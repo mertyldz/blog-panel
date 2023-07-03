@@ -14,6 +14,7 @@
                   <p><b>isPublished : </b>{{post?.isPublished}}</p>
                   <hr>
                   <h4 class="card-subtitle mb-2 text-body-secondary">Comments</h4>
+                  <p *ngFor="let comment of showComment"><b>@{{comment.username}}: </b> {{comment.comment}}  </p>
 
                 </div>
               </div>
