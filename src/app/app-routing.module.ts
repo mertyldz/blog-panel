@@ -24,6 +24,8 @@ const routes: Routes = [
   { path: 'category/edit/:id', component: EditCategoryComponent },
   { path: 'category/detail/:id', component: DetailCategoryComponent },
   { path: 'comment', component: CommentComponent },
+  { path: 'comment/add', component: CommentComponent },
+  { path: 'comment/detail/:id', component: CommentComponent },
   { path: '', redirectTo: 'user', pathMatch: 'full' },
 ];
 
