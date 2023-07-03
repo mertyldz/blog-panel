@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../pages/category/category';
+import { Post } from '../pages/post/post';
 
 @Injectable({
   providedIn: 'root'
@@ -46,9 +47,20 @@ export class CategoryService {
     let index = this.getIndex(id);
     return String(this.categories[index].name);
   }
+  getCategoryById(id:number):Category{
+    let index = this.getIndex(id);
+    return this.categories[index];
+  }
 
   removeCategory(id:number){
     let index = this.getIndex(id);
     this.categories.splice(index,1);
+  }
+
+  updateCategory(id:number, category:Category){
+    let index = this.getIndex(id);
+    this.categories[index].name= category.name;
+    this.categories[index].categoryId= category.categoryId;
+    this.categories[index].creationDate= category.creationDate;
   }
 }
