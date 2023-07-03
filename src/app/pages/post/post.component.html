@@ -1,1 +1,42 @@
-<p>post works!</p>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium corrupti odit
+            consequuntur, atque, placeat enim quisquam quo dignissimos maxime fuga modi laboriosam officiis temporibus
+            nemo rem itaque dolores voluptate saepe nobis eaque optio repellendus alias sed aut. Dicta veniam provident
+            perspiciatis sequi ad harum. Placeat, tempore, inventore perspiciatis harum alias quaerat sapiente omnis
+            eligendi repudiandae enim doloremque id ad. Architecto odio doloribus rerum sapiente quod, sint fuga ullam
+            aliquid obcaecati minima? Hic veniam quod cumque assumenda temporibus! Et eius recusandae amet laborum id
+            laudantium ea quaerat illo? Alias, quibusdam perferendis vero sit velit nihil nostrum illum corporis totam
+            repellat nulla tempora dignissimos aperiam enim. Eum, accusamus veritatis dicta possimus optio rerum
+            voluptate perspiciatis cumque repellat eligendi odio quis cum praesentium veniam facere porro totam
+            doloremque ex sequi quibusdam labore facilis laudantium. Dolor architecto, nihil possimus, ipsam porro error
+            quisquam, quos repudiandae quae ipsum quam quo maxime modi dicta suscipit vel!</div>
+        <div class="col-md-9">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <th>postId</th>
+                    <th>userId</th>
+                    <th>categoryId</th>
+                    <th>title</th>
+                    <th>viewCount</th>
+                    <th>creationDate</th>
+                    <th>isPublished</th>
+                    <th>Sil</th>
+                    <th>Detay</th>
+                </thead>
+
+                <tbody *ngFor="let post of postList">
+                    <td>{{post.postId}}</td>
+                    <td>{{post.userId}}</td>
+                    <td>{{post.categoryId}}</td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.viewCount}}</td>
+                    <td>{{post.creationDate}}</td>
+                    <td>{{post.isPublished}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteUser(post.postId)">Sil</button></td>
+                    <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detaylar</button></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

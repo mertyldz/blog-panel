@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'user/add', component: AddUserComponent },
   { path: 'user/:id', component: UpdateUserComponent },
   { path: 'post', component: PostComponent },
+  { path: 'post/:id', component: PostComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'comment', component: CommentComponent },
   { path: '', redirectTo: 'user', pathMatch: 'full' },
