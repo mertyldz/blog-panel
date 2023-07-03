@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../pages/category/category';
 import { Post } from '../pages/post/post';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class CategoryService {
     "creationDate": "12/11/2017"
   }];
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   getCategories(){
     return this.categories;
@@ -62,5 +63,11 @@ export class CategoryService {
     this.categories[index].name= category.name;
     this.categories[index].categoryId= category.categoryId;
     this.categories[index].creationDate= category.creationDate;
+  }
+
+  addCategory(category:Category){
+    this.categories.push(category);
+    alert("Kategori başarıyla eklendi!")
+    this.router.navigateByUrl("/category")
   }
 }
