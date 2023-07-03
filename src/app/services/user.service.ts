@@ -115,4 +115,9 @@ export class UserService {
   getLength(): number {
     return this.userList.length;
   }
+
+  getUsernameById(id:number){
+    let index = this.getIndex(id);
+    return this.userList[index].username;
+  }
 }
