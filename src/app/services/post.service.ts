@@ -578,12 +578,22 @@ export class PostService {
     this.posts.splice(index, 1);
   }
 
-  getPostById(id: number){
+  getPostById(id: number) {
     let index = this.getIndex(id);
     return this.posts[index];
   }
 
-  addPost(post:Post){
+  addPost(post: Post) {
     this.posts.push(post);
+  }
+
+  getTotalPostByCategoryId(categoryId: number) {
+    let totalPost: number = 0;
+    for (let post of this.posts) {
+      if (post.categoryId === categoryId) {
+        totalPost++;
+      }
+    }
+    return totalPost;
   }
 }
