@@ -12,6 +12,7 @@ import { AddCategoryComponent } from './pages/category/add-category/add-category
 import { EditCategoryComponent } from './pages/category/edit-category/edit-category.component';
 import { DetailCategoryComponent } from './pages/category/detail-category/detail-category.component';
 import { CommentDetailComponent } from './pages/comment/comment-detail/comment-detail.component';
+import { AddCommentComponent } from './pages/comment/add-comment/add-comment.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'category/edit/:id', component: EditCategoryComponent },
   { path: 'category/detail/:id', component: DetailCategoryComponent },
   { path: 'comment', component: CommentComponent },
-  { path: 'comment/add', component: CommentComponent },
+  { path: 'comment/add', component: AddCommentComponent },
   { path: 'comment/detail/:id', component: CommentDetailComponent },
   { path: '', redirectTo: 'user', pathMatch: 'full' },
 ];
