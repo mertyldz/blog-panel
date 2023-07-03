@@ -1,1 +1,25 @@
-<p *ngFor="let category of categories">{{category.name}}</p>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-3"><app-aside-category></app-aside-category></div>
+        <div class="col-md-9">
+            <table class="table table-hover">
+                <thead>
+                    <th>Kategori Numarası</th>
+                    <th>Kategori İsmi</th>
+                    <th>Oluşturulma Tarihi</th>
+                    <th>Sil</th>
+                    <th>Düzenle</th>
+                </thead>
+                <tbody *ngFor="let category of categories">
+                    <td>{{category.categoryId}}</td>
+                    <td>{{category.name}}</td>
+                    <td>{{category.creationDate}}</td>                  
+                    <td><button type="button" class="btn btn-danger" (click)="removeCategory()">Sil</button></td>
+                    <!-- <td><button type="button" class="btn btn-warning" (click)="" [routerLink]="['/user/', user.userId]">Düzenle</button></td> -->
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+

@@ -11,4 +11,6 @@ export class CategoryComponent {
   constructor(private categoryService: CategoryService) {}
 
   categories: Category[] = this.categoryService.getCategories();
+
+  removeCategory(){}
 }
