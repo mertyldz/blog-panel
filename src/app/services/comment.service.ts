@@ -820,6 +820,12 @@ getIndex(id: number): number {
   }
   return -1;
 }
+
+getCommentById(id:number){
+  let index = this.getIndex(id);
+  return this.comments[index];
+}
+
 removeComment(id:number){
   let index = this.getIndex(id);
   this.comments.splice(index,1);
