@@ -1,0 +1,50 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-3"> <app-aside-post></app-aside-post></div>
+        <div class="col-md-9">
+            <form [formGroup]="addPostForm" (ngSubmit)="save()">
+
+                <div class="mb-3">
+                    <label for="userId" class="form-label">postId</label>
+                    <input type="text" class="form-control" formControlName="postId">
+                </div>
+                <div class="mb-3">
+                    <label for="userId" class="form-label">userId</label>
+                    <input type="text" class="form-control" formControlName="userId">
+                </div>
+                <div class="mb-3">
+                    <label for="userId" class="form-label">categoryId</label>
+                    <input type="text" class="form-control" formControlName="categoryId">
+                </div>
+                <div class="mb-3">
+                    <label for="userId" class="form-label">title</label>
+                    <input type="text" class="form-control" formControlName="title">
+                </div>
+                <div class="mb-3">
+                    <label for="userId" class="form-label">title</label>
+                    <input type="text" class="form-control" formControlName="title">
+                </div>
+                <div class="mb-3">
+                    <label for="userId" class="form-label">content</label>
+                    <input type="text" class="form-control" formControlName="content">
+                </div>
+                <div class="mb-3">
+                    <label for="userId" class="form-label">viewCount</label>
+                    <input type="text" class="form-control" formControlName="viewCount">
+                </div>
+                <div class="mb-3">
+                    <label for="userId" class="form-label">creationDate</label>
+                    <input type="text" class="form-control" formControlName="creationDate">
+                </div>
+                <div class="form-check" *ngFor="let publish of isPublished">
+                    <input type="radio" [value]="publish.isPublished" class="form-check-input" formControlName="isPublished">
+                    <label class="form-check-label" for="isPublished"> {{publish.status}}</label>
+                </div>
+           
+            <button class="btn btn-primary" type="submit">Kaydet</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>
