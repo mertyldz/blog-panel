@@ -8,6 +8,7 @@ import { AddUserComponent } from './pages/add-user/add-user.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { PostDetailComponent } from './pages/post/post-detail/post-detail.component';
 import { AddPostComponent } from './pages/post/add-post/add-post.component';
+import { AddCategoryComponent } from './pages/category/add-category/add-category.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'post/add', component: AddPostComponent },
   { path: 'post/:id', component: PostDetailComponent},
   { path: 'category', component: CategoryComponent },
+  { path: 'category/add', component: AddCategoryComponent },
   { path: 'comment', component: CommentComponent },
   { path: '', redirectTo: 'user', pathMatch: 'full' },
 ];
