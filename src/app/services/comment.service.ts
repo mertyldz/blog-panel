@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Comment } from '../pages/comment/comment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -807,7 +808,7 @@ comments:Comment[]=[
     isConfirmed: true
   }
 ]
-constructor() { }
+constructor(private router:Router) { }
 
 getComments():Comment[] {
   return this.comments;
@@ -843,6 +844,14 @@ calculateCommentNumber(postId:number):number{
     }
   }
   return counter;
+}
+
+addComment(comment:Comment){
+  this.comments.push(comment);
+  alert("Yorum başarıyla eklendi!");
+  this.router.navigateByUrl("/comment")
+
+
 }
 
 
