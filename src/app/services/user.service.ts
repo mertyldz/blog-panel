@@ -94,17 +94,25 @@ export class UserService {
   }
 
   deleteUser(id: number): void {
-    let index = this.getIndex(id);
-    this.userList.splice(index, 1);
+    if (this.getLength() > 1) {
+      let index = this.getIndex(id);
+      this.userList.splice(index, 1);
+    } else {
+      alert('Tek kullanıcı kaldığı için silme işlemi gerçekleştirilemez.');
+    }
   }
 
   addUser(user: User): void {
     this.userList.push(user);
   }
 
-  updateUser(id: number, username:string, email:string){
+  updateUser(id: number, username: string, email: string) {
     let index = this.getIndex(id);
-    this.userList[index].username=username;
-    this.userList[index].email=email;
+    this.userList[index].username = username;
+    this.userList[index].email = email;
+  }
+
+  getLength(): number {
+    return this.userList.length;
   }
 }
