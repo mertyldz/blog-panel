@@ -12,5 +12,8 @@ export class CategoryComponent {
 
   categories: Category[] = this.categoryService.getCategories();
 
-  removeCategory(){}
+  removeCategory(id:number){
+    this.categoryService.removeCategory(id)
+  }
+  updateCategory(){}
 }

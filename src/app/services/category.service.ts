@@ -46,4 +46,9 @@ export class CategoryService {
     let index = this.getIndex(id);
     return String(this.categories[index].name);
   }
+
+  removeCategory(id:number){
+    let index = this.getIndex(id);
+    this.categories.splice(index,1);
+  }
 }

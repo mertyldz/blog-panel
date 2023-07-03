@@ -14,8 +14,8 @@
                     <td>{{category.categoryId}}</td>
                     <td>{{category.name}}</td>
                     <td>{{category.creationDate}}</td>                  
-                    <td><button type="button" class="btn btn-danger" (click)="removeCategory()">Sil</button></td>
-                    <!-- <td><button type="button" class="btn btn-warning" (click)="" [routerLink]="['/user/', user.userId]">Düzenle</button></td> -->
+                    <td><button type="button" class="btn btn-danger" (click)="removeCategory(category.categoryId)">Sil</button></td>
+                    <td><button type="button" class="btn btn-warning" (click)="updateCategory()" [routerLink]="['/category/edit', category.categoryId]">Düzenle</button></td>
                 </tbody>
             </table>
 
