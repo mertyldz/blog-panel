@@ -14,6 +14,7 @@ import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { AsideComponent } from './commons/aside/aside.component';
 import { PostDetailComponent } from './pages/post/post-detail/post-detail.component';
 import { AsidePostComponent } from './commons/aside-post/aside-post.component';
+import { AddPostComponent } from './pages/post/add-post/add-post.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AsidePostComponent } from './commons/aside-post/aside-post.component';
     UpdateUserComponent,
     AsideComponent,
     PostDetailComponent,
-    AsidePostComponent
+    AsidePostComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
