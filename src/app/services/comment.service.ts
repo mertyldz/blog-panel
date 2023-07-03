@@ -812,6 +812,18 @@ constructor() { }
 getComments():Comment[] {
   return this.comments;
 }
+getIndex(id: number): number {
+  for (let i = 0; i < this.comments.length; i++) {
+    if (this.comments[i].commentId === id) {
+      return i;
+    }
+  }
+  return -1;
+}
+removeComment(id:number){
+  let index = this.getIndex(id);
+  this.comments.splice(index,1);
+}
 
 filterCommentsByPostId(id:number){
   return this.comments.filter(x=>x.postId===id)
