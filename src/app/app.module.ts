@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { AsideComponent } from './commons/aside/aside.component';
 import { PostDetailComponent } from './pages/post/post-detail/post-detail.component';
+import { AsidePostComponent } from './commons/aside-post/aside-post.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PostDetailComponent } from './pages/post/post-detail/post-detail.compon
     AddUserComponent,
     UpdateUserComponent,
     AsideComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    AsidePostComponent
   ],
   imports: [
     BrowserModule,
