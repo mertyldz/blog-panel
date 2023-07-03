@@ -9,6 +9,7 @@ import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { PostDetailComponent } from './pages/post/post-detail/post-detail.component';
 import { AddPostComponent } from './pages/post/add-post/add-post.component';
 import { AddCategoryComponent } from './pages/category/add-category/add-category.component';
+import { EditCategoryComponent } from './pages/category/edit-category/edit-category.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'post/:id', component: PostDetailComponent},
   { path: 'category', component: CategoryComponent },
   { path: 'category/add', component: AddCategoryComponent },
+  { path: 'category/edit/:id', component: EditCategoryComponent },
   { path: 'comment', component: CommentComponent },
   { path: '', redirectTo: 'user', pathMatch: 'full' },
 ];

@@ -17,6 +17,7 @@ import { AsidePostComponent } from './commons/aside-post/aside-post.component';
 import { AddPostComponent } from './pages/post/add-post/add-post.component';
 import { AsideCategoryComponent } from './commons/aside-category/aside-category.component';
 import { AddCategoryComponent } from './pages/category/add-category/add-category.component';
+import { EditCategoryComponent } from './pages/category/edit-category/edit-category.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AddCategoryComponent } from './pages/category/add-category/add-category
     AsidePostComponent,
     AddPostComponent,
     AsideCategoryComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,
