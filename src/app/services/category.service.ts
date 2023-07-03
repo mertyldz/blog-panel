@@ -32,6 +32,7 @@ export class CategoryService {
   getCategories(){
     return this.categories;
   }
+  
   getIndex(id: number): number {
     for (let i = 0; i < this.categories.length; i++) {
       if (this.categories[i].categoryId === id) {
@@ -43,6 +44,6 @@ export class CategoryService {
 
   getCategoryNameById(id:number):string{
     let index = this.getIndex(id);
-    return this.categories[index].name;
+    return String(this.categories[index].name);
   }
 }
