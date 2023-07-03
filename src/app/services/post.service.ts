@@ -582,4 +582,8 @@ export class PostService {
     let index = this.getIndex(id);
     return this.posts[index];
   }
+
+  addPost(post:Post){
+    this.posts.push(post);
+  }
 }
