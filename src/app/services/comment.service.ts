@@ -817,5 +817,15 @@ filterCommentsByPostId(id:number){
   return this.comments.filter(x=>x.postId===id)
 }
 
+calculateCommentNumber(postId:number):number{
+  let counter:number=0;
+  for(let comment of this.comments){
+    if(comment.postId===postId){
+      counter++
+    }
+  }
+  return counter;
+}
+
 
 }
