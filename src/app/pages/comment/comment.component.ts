@@ -10,6 +10,7 @@ import { Comment } from './comment';
 export class CommentComponent implements OnInit{
   comments:Comment[]=[];
   pageNumber:number=1;
+  filterText:string='';
 
   constructor(private commentService:CommentService){
     
