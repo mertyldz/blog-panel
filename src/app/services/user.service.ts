@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../pages/user/user';
+import { CommentService } from './comment.service';
+import { PostService } from './post.service';
 
 @Injectable({
   providedIn: 'root',
@@ -78,7 +80,7 @@ export class UserService {
     },
   ];
 
-  constructor() {}
+  constructor(private postService:PostService, private commentService:CommentService) {}
 
   getIndex(id: number): number {
     for (let i = 0; i < this.userList.length; i++) {
@@ -94,11 +96,15 @@ export class UserService {
   }
 
   deleteUser(id: number): void {
-    if (this.getLength() > 1) {
+    if (this.getLength() === 1) {
+      alert('Tek kullanıcı kaldığı için silme işlemi gerçekleştirilemez!');
+    } else if(this.postService.anyPostByUserId(id)){
+      alert('Kullanıcıya ait gönderi bulunduğu için silme işlemi gerçekleştirilemez!')
+    } else if(this.commentService.anyCommentByUserId(id)){
+      alert('Kullanıcıya ait yorum bulunduğu için silme işlemi gerçekleştirilemez!')
+    } else {
       let index = this.getIndex(id);
       this.userList.splice(index, 1);
-    } else {
-      alert('Tek kullanıcı kaldığı için silme işlemi gerçekleştirilemez.');
     }
   }
 

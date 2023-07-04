@@ -860,5 +860,14 @@ updateComment(selectedId:number,comment:Comment){
   this.router.navigateByUrl("/comment")
 }
 
+anyCommentByUserId(userId:number): boolean{
+  for(let comment of this.comments){
+    if(comment.userId===userId){
+      return true;
+    }
+  }
+  return false;
+}
+
 
 }

@@ -604,4 +604,13 @@ export class PostService {
     }
     return totalPost;
   }
+
+  anyPostByUserId(userId:number): boolean{
+    for(let post of this.posts){
+      if(post.userId===userId){
+        return true;
+      }
+    }
+    return false;
+  }
 }
