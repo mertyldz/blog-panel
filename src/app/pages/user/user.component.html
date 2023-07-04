@@ -16,7 +16,7 @@
                     <th>Sil</th>
                     <th>Düzenle</th>
                 </thead>
-                <tbody class="" *ngFor="let user of users">
+                <tbody class="" *ngFor="let user of users | paginate: {itemsPerPage:10, currentPage:pageNumber}">
                     <td>{{user.userId}}</td>
                     <td>{{user.username}}</td>
                     <td>{{user.email}}</td>
@@ -26,6 +26,9 @@
                     <td><button type="button" class="btn btn-warning" (click)="updateUser(user.userId)" [routerLink]="['/user/', user.userId]">Düzenle</button></td>
                 </tbody>
             </table>
+            <div>
+                <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+            </div>
         </div>
     </div>
 </div>

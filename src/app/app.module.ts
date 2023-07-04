@@ -24,7 +24,7 @@ import { CommentDetailComponent } from './pages/comment/comment-detail/comment-d
 import { AddCommentComponent } from './pages/comment/add-comment/add-comment.component';
 import { UpdateCommentComponent } from './pages/comment/update-comment/update-comment.component';
 import { UpdatePostComponent } from './pages/post/update-post/update-post.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { UpdatePostComponent } from './pages/post/update-post/update-post.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

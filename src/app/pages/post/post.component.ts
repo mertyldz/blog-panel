@@ -9,7 +9,10 @@ import { CommentService } from 'src/app/services/comment.service';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent {
+  pageNumber:number=1;
+  
   constructor(private postService: PostService, private commentService:CommentService) {}
+
   postList: Post[] = this.postService.getPosts();
 
   deleteUser(id:number){

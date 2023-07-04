@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
-
+  pageNumber:number=1;
   constructor(private userService:UserService){}
 
   users:User[] = this.userService.getUserList();

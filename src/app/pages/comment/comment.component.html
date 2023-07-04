@@ -13,7 +13,7 @@
                     <th>Sil</th>
                     <th>Detaylar</th>
                 </thead>
-                <tbody *ngFor="let comment of comments">
+                <tbody *ngFor="let comment of comments | paginate: {itemsPerPage:10, currentPage:pageNumber}">
                     <tr>
                         <td>{{comment.commentId}}</td>
                         <td>{{comment.postId}}</td>
@@ -29,6 +29,9 @@
                     </tr>
                 </tbody>
             </table>
+            <div>
+                <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+            </div>
         </div>
     </div>
 </div>

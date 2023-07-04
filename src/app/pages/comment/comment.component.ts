@@ -9,6 +9,7 @@ import { Comment } from './comment';
 })
 export class CommentComponent {
   comments:Comment[];
+  pageNumber:number=1;
 
   constructor(private commentService:CommentService){
     this.comments=this.commentService.getComments();

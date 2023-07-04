@@ -8,6 +8,8 @@ import { Category } from './category';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent {
+  pageNumber:number=1;
+
   constructor(private categoryService: CategoryService) {}
 
   categories: Category[] = this.categoryService.getCategories();
