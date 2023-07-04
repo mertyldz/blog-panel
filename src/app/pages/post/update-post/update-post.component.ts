@@ -1,4 +1,14 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PostService } from 'src/app/services/post.service';
+import { Post } from '../post';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserComponent } from '../../user/user.component';
+import { Category } from '../../category/category';
+import { UserService } from 'src/app/services/user.service';
+import { CategoryService } from 'src/app/services/category.service';
+import { User } from '../../user/user';
+import { PublishedStatus } from '../add-post/add-post.component';
 
 @Component({
   selector: 'app-update-post',
@@ -6,5 +16,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./update-post.component.css']
 })
 export class UpdatePostComponent {
+  selectedPostId:number;
+  selectedPost:Post;
+  updatePostForm:FormGroup;
+  userList:User[]=this.userService.getUserList();
+  categoryList: Category[]= this.categoryService.getCategories();
+  isPublished: PublishedStatus[] = [
+    { status: 'Yayında', isPublished: true },
+    { status: 'Yayında Değil', isPublished: false },
+  ];
+
+
+  constructor(private activatedRoute:ActivatedRoute, private postService:PostService, fb:FormBuilder, private userService:UserService, private categoryService:CategoryService){
+    this.selectedPostId=Number(activatedRoute.snapshot.paramMap.get("id"));
+    this.selectedPost = this.postService.getPostById(this.selectedPostId);
+
+    this.updatePostForm=fb.group({
+      postId:this.selectedPost.postId,
+      userId:this.selectedPost.userId,
+      categoryId:this.selectedPost.categoryId,
+      title:this.selectedPost.title,
+      viewCount:this.selectedPost.viewCount,
+      creationDate:this.selectedPost.creationDate,
+      isPublished:this.selectedPost.isPublished,
+      content:this.selectedPost.content
+    })
+  }
+
+  updatePost(){
+    this.selectedPost=this.updatePostForm.value;
+    this.postService.updatePost(this.selectedPostId, this.selectedPost);
+  }
 
 }

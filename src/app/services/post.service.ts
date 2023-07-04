@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../pages/post/post';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -558,7 +559,7 @@ export class PostService {
     },
   ];
 
-  constructor() {}
+  constructor(private router:Router) {}
 
   getIndex(id: number): number {
     for (let i = 0; i < this.posts.length; i++) {
@@ -585,6 +586,13 @@ export class PostService {
 
   addPost(post: Post) {
     this.posts.push(post);
+  }
+
+  updatePost(postId:number, post:Post){
+    let index = this.getIndex(postId);
+    this.posts[index]=post;
+    alert("Gönderi Güncellendi!")
+    this.router.navigateByUrl("/post")
   }
 
   getTotalPostByCategoryId(categoryId: number) {
