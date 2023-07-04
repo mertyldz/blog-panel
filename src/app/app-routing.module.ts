@@ -14,6 +14,7 @@ import { DetailCategoryComponent } from './pages/category/detail-category/detail
 import { CommentDetailComponent } from './pages/comment/comment-detail/comment-detail.component';
 import { AddCommentComponent } from './pages/comment/add-comment/add-comment.component';
 import { UpdateCommentComponent } from './pages/comment/update-comment/update-comment.component';
+import { UpdatePostComponent } from './pages/post/update-post/update-post.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'user/:id', component: UpdateUserComponent },
   { path: 'post', component: PostComponent },
   { path: 'post/add', component: AddPostComponent },
+  { path: 'post/update/:id', component: UpdatePostComponent },
   { path: 'post/:id', component: PostDetailComponent},
   { path: 'category', component: CategoryComponent },
   { path: 'category/add', component: AddCategoryComponent },

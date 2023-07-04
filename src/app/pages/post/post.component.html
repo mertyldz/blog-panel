@@ -12,6 +12,7 @@
                     <th>creationDate</th>
                     <th>isPublished</th>
                     <th>Sil</th>
+                    <th>Güncelle</th>
                     <th>Detay</th>
                 </thead>
 
@@ -24,6 +25,7 @@
                     <td>{{post.creationDate}}</td>
                     <td>{{post.isPublished}}</td>
                     <td><button class="btn btn-danger" (click)="deleteUser(post.postId)">Sil</button></td>
+                    <td><button type="button" class="btn btn-warning" [routerLink]="['/post/update', post.postId]">Güncelle</button></td>
                     <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detaylar</button></td>
                 </tbody>
             </table>

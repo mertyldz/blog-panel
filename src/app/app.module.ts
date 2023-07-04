@@ -23,6 +23,7 @@ import { AsideCommentComponent } from './commons/aside-comment/aside-comment.com
 import { CommentDetailComponent } from './pages/comment/comment-detail/comment-detail.component';
 import { AddCommentComponent } from './pages/comment/add-comment/add-comment.component';
 import { UpdateCommentComponent } from './pages/comment/update-comment/update-comment.component';
+import { UpdatePostComponent } from './pages/post/update-post/update-post.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { UpdateCommentComponent } from './pages/comment/update-comment/update-co
     AsideCommentComponent,
     CommentDetailComponent,
     AddCommentComponent,
-    UpdateCommentComponent
+    UpdateCommentComponent,
+    UpdatePostComponent
   ],
   imports: [
     BrowserModule,
