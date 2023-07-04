@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from './post';
 import { CommentService } from 'src/app/services/comment.service';
@@ -8,12 +8,16 @@ import { CommentService } from 'src/app/services/comment.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   pageNumber:number=1;
+  postList: Post[]=[]
   
   constructor(private postService: PostService, private commentService:CommentService) {}
+  
+  ngOnInit(): void {
+    this.postList = this.postService.getPosts();
+  }
 
-  postList: Post[] = this.postService.getPosts();
 
   deleteUser(id:number){
     if(this.commentService.calculateCommentNumber(id)===0){

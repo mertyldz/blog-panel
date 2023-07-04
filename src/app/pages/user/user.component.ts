@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from './user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -7,11 +7,14 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent {
+export class UserComponent implements OnInit{
   pageNumber:number=1;
+  users:User[]=[]
   constructor(private userService:UserService){}
-
-  users:User[] = this.userService.getUserList();
+  
+  ngOnInit(): void {
+  this.users= this.userService.getUserList();
+}
 
   removeUser(id:number){this.userService.deleteUser(id)}
   updateUser(id:number){console.log(`${id} + " güncellendi!`)}

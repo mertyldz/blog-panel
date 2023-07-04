@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from './category';
 
@@ -7,12 +7,15 @@ import { Category } from './category';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
 })
-export class CategoryComponent {
+export class CategoryComponent implements OnInit {
   pageNumber:number=1;
+  categories: Category[]=[]
 
   constructor(private categoryService: CategoryService) {}
 
-  categories: Category[] = this.categoryService.getCategories();
+  ngOnInit(): void {
+    this.categories = this.categoryService.getCategories();
+  }
 
   removeCategory(id:number){
     this.categoryService.removeCategory(id)
