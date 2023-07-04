@@ -25,6 +25,8 @@ import { AddCommentComponent } from './pages/comment/add-comment/add-comment.com
 import { UpdateCommentComponent } from './pages/comment/update-comment/update-comment.component';
 import { UpdatePostComponent } from './pages/post/update-post/update-post.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CommentFilterPipe } from './pipes/commentfilter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommentDetailComponent,
     AddCommentComponent,
     UpdateCommentComponent,
-    UpdatePostComponent
+    UpdatePostComponent,
+    CommentFilterPipe
   ],
   imports: [
     BrowserModule,

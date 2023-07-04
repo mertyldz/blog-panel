@@ -2,6 +2,18 @@
     <div class="row mt-3">
         <div class="col-md-3"><app-aside-post></app-aside-post></div>
         <div class="col-md-9">
+            <form class="d-flex" role="search">
+                <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search" [(ngModel)]="filterPostId">
+
+                <input name="userId" class="form-control me-2" type="text" placeholder="User Id" aria-label="Search" [(ngModel)]="filterUserId">
+                
+                <input name="categoryId" class="form-control me-2" type="text" placeholder="Category Id" aria-label="Search" [(ngModel)]="filterCategoryId"> 
+                
+                <button class="btn btn-outline-success mx-1" type="submit" (click)="write()">Filtrele</button>
+                <button class="btn btn-outline-danger mx-1" type="submit" [routerLink]="'/post'" (click)="removeFilter()">Temizle</button>
+              </form> 
+
+              
             <table class="table table-hover table-striped">
                 <thead>
                     <th>postId</th>
@@ -38,19 +50,6 @@
         </div>
         
         <div class="row">
-
-            <!-- <div class="col-md-10"></div>
-            <div class="col-md-2">
-                <div class="row">
-                    <div class="col-md-6 text-left">
-                        <button >Önceki</button>
-                    </div>
-                    <div class="col-md-6 text-right">    
-                        <button (click)="increasePageNumber()">Sonraki</button>
-                    </div>
-                </div>
-
-            </div> -->
         </div>
     </div>
 </div>

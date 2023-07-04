@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/user.service';
 import { Category } from '../../category/category';
 import { CategoryService } from 'src/app/services/category.service';
 import { Route, Router } from '@angular/router';
+import { last, map } from 'rxjs';
 
 @Component({
   selector: 'app-add-post',
@@ -34,8 +35,11 @@ export class AddPostComponent {
   ];
 
   constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService, private router:Router) {
+    let tempPostId;
+    this.postService.getPosts().subscribe(x=> tempPostId=x.length + 1)
+
     this.addPostForm = fb.group({
-      postId: (this.postService.getPosts().length + 1),
+      postId: (tempPostId),
       userId: 1,
       categoryId: 1,
       title: '',
@@ -44,6 +48,7 @@ export class AddPostComponent {
       creationDate: '',
       isPublished: false,
     });
+
   }
 
   save() {

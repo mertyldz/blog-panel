@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../pages/post/post';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -570,8 +571,8 @@ export class PostService {
     return -1;
   }
 
-  getPosts(): Post[] {
-    return this.posts;
+  getPosts(): Observable<Post[]> {
+    return of(this.posts);
   }
 
   deleteUser(id: number): void {
