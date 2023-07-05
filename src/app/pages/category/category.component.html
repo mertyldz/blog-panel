@@ -19,8 +19,10 @@
                         <td>{{category.creationDate | date:'dd/MM/yyyy'}}</td>
                         <td><button type="button" class="btn btn-success"
                                 [routerLink]="['/category/detail', category.categoryId]">Detaylar</button></td>
-                        <td><button type="button" class="btn btn-warning" (click)="updateCategory()"
-                                [routerLink]="['/category/edit', category.categoryId]">Düzenle</button></td>
+                                <td>
+                                    <app-edit-button (click)="updateCategory()"
+                                    [routerLink]="['/category/edit', category.categoryId]"></app-edit-button>
+                                </td>
                         <td><app-delete-button (click)="removeCategory(category.categoryId)"></app-delete-button></td>
                         
                     </tr>

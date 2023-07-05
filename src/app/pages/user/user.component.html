@@ -23,8 +23,10 @@
                         <td>{{user.email}}</td>
                         <td>{{user.creationDate | date:'dd/MM/yyyy'}}</td>
                         <td>{{user.isActive | userboolean}}</td>
-                        <td><button type="button" class="btn btn-warning" (click)="updateUser(user.userId)"
-                                [routerLink]="['/user/', user.userId]">Düzenle</button></td>
+                                <td>
+                                    <app-edit-button (click)="updateUser(user.userId)"
+                                    [routerLink]="['/user/', user.userId]"></app-edit-button>
+                                </td>
                         <td><app-delete-button (click)="removeUser(user.userId)"></app-delete-button></td>
                     </tr>
                 </tbody>

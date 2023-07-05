@@ -44,10 +44,11 @@
                         <td>{{post.isPublished | published}}</td>
                         <td><button type="button" class="btn btn-success"
                                 [routerLink]="['/post/', post.postId]">Detay</button></td>
-                        <td><button type="button" class="btn btn-warning"
-                                [routerLink]="['/post/update', post.postId]">Düzenle</button></td>
                         <td>
-
+                            <app-edit-button [routerLink]="['/post/update', post.postId]"></app-edit-button>
+                        </td>
+                        
+                        <td>
                             <app-delete-button (click)="deleteUser(post.postId)"></app-delete-button>
                         </td>
                     </tr>
