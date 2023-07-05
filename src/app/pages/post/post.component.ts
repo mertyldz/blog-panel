@@ -14,6 +14,7 @@ export class PostComponent implements OnInit {
   pageNumber: number = 1;
   postList: Post[] = [];
   nonFilteredPostList: Post[] = [];
+  postId:number=0;
 
   filterPostId: string = '';
   filterUserId: string = '';
