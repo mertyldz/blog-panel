@@ -29,17 +29,19 @@
                 </thead>
 
                 <tbody *ngFor="let post of postList | paginate: {itemsPerPage:10, currentPage:pageNumber}">
-                    <td>{{post.postId}}</td>
-                    <td>{{post.userId}}</td>
-                    <td>{{post.categoryId}}</td>
-                    <td>{{post.title}}</td>
-                    <td>{{post.viewCount}}</td>
-                    <td>{{post.creationDate}}</td>
-                    <td>{{post.isPublished}}</td>
-                    <td><button class="btn btn-danger" (click)="deleteUser(post.postId)">Sil</button></td>
-                    <td><button type="button" class="btn btn-warning" [routerLink]="['/post/update', post.postId]">Güncelle</button></td>
-                    <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detaylar</button></td>
-                </tbody>
+                    <tr>
+                        <td>{{post.postId}}</td>
+                        <td>{{post.userId}}</td>
+                        <td>{{post.categoryId}}</td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.viewCount}}</td>
+                        <td>{{post.creationDate}}</td>
+                        <td>{{post.isPublished}}</td>
+                        <td><button class="btn btn-danger" (click)="deleteUser(post.postId)">Sil</button></td>
+                        <td><button type="button" class="btn btn-warning" [routerLink]="['/post/update', post.postId]">Düzenle</button></td>
+                        <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detaylar</button></td>
+                    </tr>
+                    </tbody>
 
             </table>
             
