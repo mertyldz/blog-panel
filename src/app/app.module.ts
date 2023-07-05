@@ -30,6 +30,7 @@ import { UserbooleanPipe } from './pipes/userboolean.pipe';
 import { UsernamePipe } from './pipes/username.pipe';
 import { PublishedPipe } from './pipes/published.pipe';
 import { CommentconfirmPipe } from './pipes/commentconfirm.pipe';
+import { ButtonComponent } from './commons/button/button.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { CommentconfirmPipe } from './pipes/commentconfirm.pipe';
     UsernamePipe,
     PublishedPipe,
     CommentconfirmPipe,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
