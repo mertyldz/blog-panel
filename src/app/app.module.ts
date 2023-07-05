@@ -29,6 +29,7 @@ import { CommentFilterPipe } from './pipes/commentfilter.pipe';
 import { UserbooleanPipe } from './pipes/userboolean.pipe';
 import { UsernamePipe } from './pipes/username.pipe';
 import { PublishedPipe } from './pipes/published.pipe';
+import { CommentconfirmPipe } from './pipes/commentconfirm.pipe';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { PublishedPipe } from './pipes/published.pipe';
     UserbooleanPipe,
     UsernamePipe,
     PublishedPipe,
+    CommentconfirmPipe,
   ],
   imports: [
     BrowserModule,

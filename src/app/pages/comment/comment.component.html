@@ -3,16 +3,17 @@
         <div class="col-md-3"><app-aside-comment></app-aside-comment></div>
         <div class="col-md-9">
             <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search" [(ngModel)]="filterText">
-            <table class="table table-light table-striped table-hover ">
+            <table class="table table-hover text-center mt-3">
                 <thead class="text-center">
-                    <th>commentId</th>
-                    <th>postId</th>
-                    <th>userId</th>
-                    <th>comment</th>
-                    <th>creationDate</th>
-                    <th>isConfirmed</th>
-                    <th>Sil</th>
-                    <th>Detaylar</th>
+                    <th>COMMENTID</th>
+                    <th>POSTID</th>
+                    <th>USERID</th>
+                    <th>YORUM</th>
+                    <th>TARİH</th>
+                    <th>ONAY</th>
+                    <th>DETAY</th>
+                    <th>DÜZENLE</th>
+                    <th>SİL</th>
                 </thead>
                 <tbody *ngFor="let comment of comments | commentfilter:filterText | paginate: {itemsPerPage:10, currentPage:pageNumber}">
                     <tr>
@@ -20,13 +21,15 @@
                         <td>{{comment.postId}}</td>
                         <td>{{comment.userId}}</td>
                         <td>{{comment.comment}}</td>
-                        <td>{{comment.creationDate}}</td>
-                        <td>{{comment.isConfirmed}}</td>
-                        <td><button type="button" class="btn btn-danger" (click)="removeComment(comment.commentId)">Sil</button></td>
-                        <td><button type="button" class="btn btn-warning"
-                                [routerLink]="['/comment/edit', comment.commentId]">Düzenle</button></td>
+                        <td>{{comment.creationDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{comment.isConfirmed | commentconfirm}}</td>
                         <td><button type="button" class="btn btn-success"
-                                [routerLink]="['/comment/detail', comment.commentId]">Detaylar</button></td>
+                            [routerLink]="['/comment/detail', comment.commentId]">Detay</button></td>
+                            <td><button type="button" class="btn btn-warning"
+                                [routerLink]="['/comment/edit', comment.commentId]">Düzenle</button></td>
+                        <td><button type="button" class="btn btn-danger" (click)="removeComment(comment.commentId)">Sil</button></td>
+                        
+                        
                     </tr>
                 </tbody>
             </table>
