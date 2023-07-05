@@ -23,10 +23,11 @@
                         <td>{{user.email}}</td>
                         <td>{{user.creationDate | date:'dd/MM/yyyy'}}</td>
                         <td>{{user.isActive | userboolean}}</td>
-                        <td><button type="button" class="btn btn-warning" (click)="updateUser(user.userId)" [routerLink]="['/user/', user.userId]">Düzenle</button></td>
-                        <td><button type="button" class="btn btn-danger" (click)="removeUser(user.userId)">Sil</button></td>
+                        <td><button type="button" class="btn btn-warning" (click)="updateUser(user.userId)"
+                                [routerLink]="['/user/', user.userId]">Düzenle</button></td>
+                        <td><app-delete-button (click)="removeUser(user.userId)"></app-delete-button></td>
                     </tr>
-                    </tbody>
+                </tbody>
             </table>
             <div class="text-center">
                 <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>

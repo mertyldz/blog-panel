@@ -2,7 +2,8 @@
     <div class="row mt-3">
         <div class="col-md-3"><app-aside [pageName]="'comment'"></app-aside></div>
         <div class="col-md-9">
-            <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search" [(ngModel)]="filterText">
+            <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search"
+                [(ngModel)]="filterText">
             <table class="table table-hover text-center mt-3">
                 <thead class="text-center">
                     <th>COMMENTID</th>
@@ -15,7 +16,8 @@
                     <th>DÜZENLE</th>
                     <th>SİL</th>
                 </thead>
-                <tbody *ngFor="let comment of comments | commentfilter:filterText | paginate: {itemsPerPage:10, currentPage:pageNumber}">
+                <tbody
+                    *ngFor="let comment of comments | commentfilter:filterText | paginate: {itemsPerPage:10, currentPage:pageNumber}">
                     <tr>
                         <td>{{comment.commentId}}</td>
                         <td>{{comment.postId}}</td>
@@ -24,12 +26,14 @@
                         <td>{{comment.creationDate | date:'dd/MM/yyyy'}}</td>
                         <td>{{comment.isConfirmed | commentconfirm}}</td>
                         <td><button type="button" class="btn btn-success"
-                            [routerLink]="['/comment/detail', comment.commentId]">Detay</button></td>
-                            <td><button type="button" class="btn btn-warning"
+                                [routerLink]="['/comment/detail', comment.commentId]">Detay</button></td>
+                        <td><button type="button" class="btn btn-warning"
                                 [routerLink]="['/comment/edit', comment.commentId]">Düzenle</button></td>
-                        <td><button type="button" class="btn btn-danger" (click)="removeComment(comment.commentId)">Sil</button></td>
-                        
-                        
+                        <td>
+                            <app-delete-button (click)="removeComment(comment.commentId)"></app-delete-button>
+                        </td>
+
+
                     </tr>
                 </tbody>
             </table>
