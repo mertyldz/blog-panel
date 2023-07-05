@@ -16,7 +16,7 @@
 
                         <td>{{category.categoryId}}</td>
                         <td>{{category.name}}</td>
-                        <td>{{category.creationDate}}</td>
+                        <td>{{category.creationDate | date:'dd/MM/yyyy'}}</td>
                         <td><button type="button" class="btn btn-success"
                                 [routerLink]="['/category/detail', category.categoryId]">Detaylar</button></td>
                         <td><button type="button" class="btn btn-warning" (click)="updateCategory()"

@@ -35,7 +35,7 @@
                         <td>{{post.categoryId}}</td>
                         <td>{{post.title}}</td>
                         <td>{{post.viewCount}}</td>
-                        <td>{{post.creationDate}}</td>
+                        <td>{{post.creationDate | date:'dd/MM/yyyy'}}</td>
                         <td>{{post.isPublished | published}}</td>
                         <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detay</button></td>
                         <td><button type="button" class="btn btn-warning" [routerLink]="['/post/update', post.postId]">Düzenle</button></td>
