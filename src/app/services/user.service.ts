@@ -126,4 +126,8 @@ export class UserService {
     let index = this.getIndex(id);
     return this.userList[index].username;
   }
+
+  getIdOfLastUser(){
+    return this.userList[this.userList.length-1].userId;
+  }
 }

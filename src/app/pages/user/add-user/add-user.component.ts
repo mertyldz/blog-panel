@@ -21,7 +21,7 @@ export class AddUserComponent {
 
   constructor(private userService: UserService, fb: FormBuilder, private router:Router) {
     this.addUserForm = fb.group({
-      userId: '', // make id unique
+      userId: this.userService.getIdOfLastUser()+1, // make id unique
       username: '',
       email: '',
       creationDate: '',
