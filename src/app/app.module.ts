@@ -28,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CommentFilterPipe } from './pipes/commentfilter.pipe';
 import { UserbooleanPipe } from './pipes/userboolean.pipe';
 import { UsernamePipe } from './pipes/username.pipe';
+import { PublishedPipe } from './pipes/published.pipe';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UsernamePipe } from './pipes/username.pipe';
     UpdatePostComponent,
     CommentFilterPipe,
     UserbooleanPipe,
-    UsernamePipe
+    UsernamePipe,
+    PublishedPipe,
   ],
   imports: [
     BrowserModule,

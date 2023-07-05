@@ -14,38 +14,38 @@
               </form> 
 
               
-            <table class="table table-hover table-striped">
+            <table class="table table-hover text-center mt-3">
                 <thead>
-                    <th>postId</th>
-                    <th>userId</th>
-                    <th>categoryId</th>
-                    <th>title</th>
-                    <th>viewCount</th>
-                    <th>creationDate</th>
-                    <th>isPublished</th>
-                    <th>Sil</th>
-                    <th>Güncelle</th>
-                    <th>Detay</th>
+                    <th>POSTID</th>
+                    <th>USERID</th>
+                    <th>CATEGORYID</th>
+                    <th>BAŞLIK</th>
+                    <th>GÖRÜNTÜLENME</th>
+                    <th>TARİH</th>
+                    <th>YAYINLANMA</th>
+                    <th>DETAY</th>
+                    <th>DÜZENLE</th>
+                    <th>SİL</th>
                 </thead>
 
                 <tbody *ngFor="let post of postList | paginate: {itemsPerPage:10, currentPage:pageNumber}">
                     <tr>
-                        <td>{{post.postId}}</td>
+                        <td><b>{{post.postId}}</b></td>
                         <td>{{post.userId}}</td>
                         <td>{{post.categoryId}}</td>
                         <td>{{post.title}}</td>
                         <td>{{post.viewCount}}</td>
                         <td>{{post.creationDate}}</td>
-                        <td>{{post.isPublished}}</td>
-                        <td><button class="btn btn-danger" (click)="deleteUser(post.postId)">Sil</button></td>
+                        <td>{{post.isPublished | published}}</td>
+                        <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detay</button></td>
                         <td><button type="button" class="btn btn-warning" [routerLink]="['/post/update', post.postId]">Düzenle</button></td>
-                        <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detaylar</button></td>
+                        <td><button class="btn btn-danger" (click)="deleteUser(post.postId)">Sil</button></td>
                     </tr>
                     </tbody>
 
             </table>
             
-            <div>
+            <div class="text-center">
                 <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
             </div>
 
