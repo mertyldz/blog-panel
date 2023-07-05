@@ -868,6 +868,9 @@ anyCommentByUserId(userId:number): boolean{
   }
   return false;
 }
+getLastId(){
+  return this.comments[this.comments.length-1].commentId;
+}
 
 
 }

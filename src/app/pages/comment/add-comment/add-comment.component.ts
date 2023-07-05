@@ -22,8 +22,10 @@ export class AddCommentComponent {
   ];
 
   constructor(fb: FormBuilder, private commentService: CommentService, private userService:UserService) {
+    let generateId=this.commentService.getLastId() + 1; 
+
     this.addCommentForm = fb.group({
-      commentId: 0,
+      commentId: generateId,
       postId: 0,
       userId: 1,
       comment: '',
