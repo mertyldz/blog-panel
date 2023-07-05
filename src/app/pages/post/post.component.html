@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row mt-3">
-        <div class="col-md-3"><app-aside-post></app-aside-post></div>
+        <div class="col-md-3"><app-aside [pageName]="'post'"></app-aside>
+        </div>
         <div class="col-md-9">
             <form class="d-flex" role="search">
                 <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search" [(ngModel)]="filterPostId">

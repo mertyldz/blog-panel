@@ -13,13 +13,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
 import { AsideComponent } from './commons/aside/aside.component';
 import { PostDetailComponent } from './pages/post/post-detail/post-detail.component';
-import { AsidePostComponent } from './commons/aside-post/aside-post.component';
 import { AddPostComponent } from './pages/post/add-post/add-post.component';
-import { AsideCategoryComponent } from './commons/aside-category/aside-category.component';
 import { AddCategoryComponent } from './pages/category/add-category/add-category.component';
 import { EditCategoryComponent } from './pages/category/edit-category/edit-category.component';
 import { DetailCategoryComponent } from './pages/category/detail-category/detail-category.component';
-import { AsideCommentComponent } from './commons/aside-comment/aside-comment.component';
 import { CommentDetailComponent } from './pages/comment/comment-detail/comment-detail.component';
 import { AddCommentComponent } from './pages/comment/add-comment/add-comment.component';
 import { UpdateCommentComponent } from './pages/comment/update-comment/update-comment.component';
@@ -44,13 +41,10 @@ import { ButtonComponent } from './commons/button/button.component';
     UpdateUserComponent,
     AsideComponent,
     PostDetailComponent,
-    AsidePostComponent,
     AddPostComponent,
-    AsideCategoryComponent,
     AddCategoryComponent,
     EditCategoryComponent,
     DetailCategoryComponent,
-    AsideCommentComponent,
     CommentDetailComponent,
     AddCommentComponent,
     UpdateCommentComponent,
