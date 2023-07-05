@@ -29,8 +29,9 @@ export class DetailCategoryComponent {
   }
 
   navigateToPosts() {
-    this.router.navigate(['/post'], {
-      queryParams: { categoryId: this.selectedId },
-    });
+    console.log(this.selectedId);
+     this.router.navigate(['/post'], {
+       queryParams: { postId: this.selectedId },
+     }); 
   }
 }
