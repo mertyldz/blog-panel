@@ -10,19 +10,24 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./update-user.component.css']
 })
 export class UpdateUserComponent {
+  activeId = Number(this.activatedRoute.snapshot.paramMap.get("id"));
+  selectedUser = this.userService.getUserList()[this.userService.getIndex(this.activeId)];
+
   updateUserForm:FormGroup;
   constructor(fb:FormBuilder, private userService:UserService, private activatedRoute: ActivatedRoute,private router:Router){ 
     this.updateUserForm=fb.group({
-      username: '',
-      email: ''
+      userId: this.selectedUser.userId,
+      username: this.selectedUser.username,
+      email: this.selectedUser.email,
+      creationDate: this.selectedUser.creationDate,
+      isActive: this.selectedUser.isActive
     })
   }
 
 
   updateUser(){
-    let id = this.activatedRoute.snapshot.paramMap.get("id");
-    let activeId:number = Number(id);
-    this.userService.updateUser(activeId , this.updateUserForm.value.username, this.updateUserForm.value.email);
+
+    this.userService.updateUser(this.activeId , this.updateUserForm.value.username, this.updateUserForm.value.email);
     alert("Başarıyla güncellendi.")
     this.router.navigateByUrl('/user')
     
