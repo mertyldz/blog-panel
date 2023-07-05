@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
@@ -12,7 +12,7 @@ import { User } from '../../user/user';
   templateUrl: './update-comment.component.html',
   styleUrls: ['./update-comment.component.css'],
 })
-export class UpdateCommentComponent {
+export class UpdateCommentComponent{
 
 
   userList:User[]=this.userService.getUserList();
@@ -31,7 +31,7 @@ export class UpdateCommentComponent {
   constructor(fb: FormBuilder, private activatedRoute:ActivatedRoute, private commentService:CommentService, private userService:UserService) {
     this.selectedCommentId=Number(activatedRoute.snapshot.paramMap.get("id"));
     this.comments = this.commentService.getComments();
-    this.selectedComment=this.comments[this.selectedCommentId];
+    this.selectedComment= this.commentService.getCommentById(this. selectedCommentId);
 
     this.editCommentForm = fb.group({
       commentId: this.selectedComment.commentId,
@@ -45,6 +45,7 @@ export class UpdateCommentComponent {
     this.updatedComment=this.editCommentForm.value;
     
   }
+
   
   editComment() {
     this.updatedComment=this.editCommentForm.value;
