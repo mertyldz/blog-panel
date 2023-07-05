@@ -2,28 +2,31 @@
     <div class="row mt-3">
         <div class="col-md-3"><app-aside-category></app-aside-category></div>
         <div class="col-md-9">
-            <table class="table table-hover">
+            <table class="table table-hover text-center">
                 <thead>
-                    <th>Kategori Numarası</th>
-                    <th>Kategori İsmi</th>
-                    <th>Oluşturulma Tarihi</th>
-                    <th>Sil</th>
-                    <th>Düzenle</th>
-                    <th>Detay</th>
+                    <th>CATEGORYID</th>
+                    <th>KATEGORİ İSMİ</th>
+                    <th>TARİH</th>
+                    <th>DETAY</th>
+                    <th>DÜZENLE</th>
+                    <th>SİL</th>
                 </thead>
                 <tbody *ngFor="let category of categories| paginate: {itemsPerPage:10, currentPage:pageNumber}">
-                    <td>{{category.categoryId}}</td>
-                    <td>{{category.name}}</td>
-                    <td>{{category.creationDate}}</td>
-                    <td><button type="button" class="btn btn-danger"
-                            (click)="removeCategory(category.categoryId)">Sil</button></td>
-                    <td><button type="button" class="btn btn-warning" (click)="updateCategory()"
-                            [routerLink]="['/category/edit', category.categoryId]">Düzenle</button></td>
-                    <td><button type="button" class="btn btn-success"
-                            [routerLink]="['/category/detail', category.categoryId]">Detaylar</button></td>
+                    <tr>
+
+                        <td>{{category.categoryId}}</td>
+                        <td>{{category.name}}</td>
+                        <td>{{category.creationDate}}</td>
+                        <td><button type="button" class="btn btn-success"
+                                [routerLink]="['/category/detail', category.categoryId]">Detaylar</button></td>
+                        <td><button type="button" class="btn btn-warning" (click)="updateCategory()"
+                                [routerLink]="['/category/edit', category.categoryId]">Düzenle</button></td>
+                        <td><button type="button" class="btn btn-danger"
+                                (click)="removeCategory(category.categoryId)">Sil</button></td>
+                    </tr>
                 </tbody>
             </table>
-            <div>
+            <div class="text-center">
                 <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
             </div>
 
