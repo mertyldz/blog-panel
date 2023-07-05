@@ -9,7 +9,7 @@
                 
                 <input name="categoryId" class="form-control me-2" type="text" placeholder="Category Id" aria-label="Search" [(ngModel)]="filterCategoryId"> 
                 
-                <button class="btn btn-outline-success mx-1" type="submit" (click)="write()">Filtrele</button>
+                <button class="btn btn-outline-success mx-1" type="submit" (click)="filter()">Filtrele</button>
                 <button class="btn btn-outline-danger mx-1" type="submit" [routerLink]="'/post'" (click)="removeFilter()">Temizle</button>
               </form> 
 
@@ -37,7 +37,7 @@
                     <td>{{post.creationDate}}</td>
                     <td>{{post.isPublished}}</td>
                     <td><button class="btn btn-danger" (click)="deleteUser(post.postId)">Sil</button></td>
-                    <td><button type="button" class="btn btn-warning" [routerLink]="['/post/update', post.postId]">Güncelle</button></td>
+                    <td><button type="button" class="btn btn-warning" [routerLink]="['/post/update', post.postId]" (click)="filter()">Güncelle</button></td>
                     <td><button type="button" class="btn btn-success" [routerLink]="['/post/', post.postId]">Detaylar</button></td>
                 </tbody>
 

@@ -13,11 +13,11 @@ import { filter, map } from 'rxjs';
 export class PostComponent implements OnInit {
   pageNumber: number = 1;
   postList: Post[] = [];
-  nonFilteredPostList: Post[] = [];
+  nonFilteredPostList: Post[]=[];
+
   filterPostId: string = '';
   filterUserId: string = '';
   filterCategoryId: string = '';
-  filteredPosts:Post[]=[];
 
   constructor(
     private postService: PostService,
@@ -31,7 +31,6 @@ export class PostComponent implements OnInit {
     this.postService.getPosts().subscribe(x=>this.nonFilteredPostList=x);
 
 
-
     this.activatedRoute.queryParamMap.subscribe((query) => {
       if (query.get('postId') !== null) {
         this.filterPostId = String(query.get('postId'));
@@ -42,10 +41,8 @@ export class PostComponent implements OnInit {
       if (query.get('filterCategoryId') !== null) {
         this.filterCategoryId = String(query.get('postId'));
       }
+      this.filter()
     });
-  }
-
-  write() {
     this.filter();
   }
 
@@ -69,22 +66,22 @@ export class PostComponent implements OnInit {
     });
 
 
-    // this.postService.getPosts().pipe(map(x =>{
-    //   x.filter(y=> y.postId===Number(this.filterPostId));
-    //   x.filter(y=> y.userId===Number(this.filterUserId));
-    //   x.filter(y=> y.categoryId===Number(this.filterCategoryId));
-    // }))
-    //   .subscribe(x=> this.postList=x)
+      //  this.postService.getPosts().pipe(filter(x =>{(y=> y.postId===Number(this.filterPostId));
+      //   (y=> y.userId===Number(this.filterUserId));(y=> y.categoryId===Number(this.filterCategoryId));
+      //  }))
+      //    .subscribe(x=> this.postList=x)
 
-     if(this.filterPostId!==''){
-       this.postList=this.postList.filter(x => x.postId===Number(this.filterPostId));
-     }
-     if(this.filterUserId!==''){
-       this.postList=this.postList.filter(x => x.userId===Number(this.filterUserId));
-     }
-     if(this.filterCategoryId!==''){
-       this.postList=this.postList.filter(x => x.categoryId===Number(this.filterCategoryId));
-     }
+      if(this.filterPostId!==''){
+        this.postList=this.postList.filter(x => x.postId===Number(this.filterPostId));
+      }
+      if(this.filterUserId!==''){
+        this.postList=this.postList.filter(x => x.userId===Number(this.filterUserId));
+      }
+      if(this.filterCategoryId!==''){
+        this.postList=this.postList.filter(x => x.categoryId===Number(this.filterCategoryId));
+      }
+
+      console.log(this.filterCategoryId);
 
   }
 
