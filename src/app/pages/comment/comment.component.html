@@ -5,7 +5,7 @@
             <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search"
                 [(ngModel)]="filterText">
             
-            <app-table [titleList]="titleList" [gridList]="comments" [notUser]="true" (onDetail)="detailComment($event)" (onEdit)="editComment($event)" (onDelete)="deleteComment($event)"></app-table>
+            <app-table [titleList]="titleList" [gridList]="comments | commentfilter:filterText" [notUser]="true" (onDetail)="detailComment($event)" (onEdit)="editComment($event)" (onDelete)="deleteComment($event)"></app-table>
         </div>
     </div>
 </div>

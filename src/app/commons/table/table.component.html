@@ -8,7 +8,7 @@
 
         </thead>
         <tbody>
-            <tr *ngFor="let grid of gridList">
+            <tr *ngFor="let grid of gridList | paginate:{itemsPerPage:pageNumber, currentPage:1}">
                 <td *ngFor="let title of titleList">{{grid[title]}}</td>
                 <td *ngIf="notUser"><app-detail-button (click)="detail(grid)"></app-detail-button></td>
                 <td ><app-edit-button (click)="edit(grid)"></app-edit-button></td>
