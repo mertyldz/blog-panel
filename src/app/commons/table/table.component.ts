@@ -13,7 +13,7 @@ export class TableComponent implements OnInit{
   @Output() onEdit = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
 
-  pageNumber:number=10;
+  pageNumber:number=1;
 
 
   ngOnInit(): void {
