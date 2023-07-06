@@ -4,38 +4,11 @@
         <div class="col-md-9">
             <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search"
                 [(ngModel)]="filterText">
-            <table class="table table-hover text-center mt-3">
-                <thead class="text-center">
-                    <th>COMMENTID</th>
-                    <th>POSTID</th>
-                    <th>USERID</th>
-                    <th>YORUM</th>
-                    <th>TARİH</th>
-                    <th>ONAY</th>
-                    <th>DETAY</th>
-                    <th>DÜZENLE</th>
-                    <th>SİL</th>
-                </thead>
-                <tbody
-                    *ngFor="let comment of comments | commentfilter:filterText | paginate: {itemsPerPage:10, currentPage:pageNumber}">
-                    <tr>
-                        <td>{{comment.commentId}}</td>
-                        <td>{{comment.postId}}</td>
-                        <td>{{comment.userId}}</td>
-                        <td>{{comment.comment}}</td>
-                        <td>{{comment.creationDate | date:'dd/MM/yyyy'}}</td>
-                        <td>{{comment.isConfirmed | commentconfirm}}</td>
-                        <td><app-detail-button [routerLink]="['/comment/detail', comment.commentId]"> </app-detail-button></td>
-                        <td><app-edit-button [routerLink]="['/comment/edit', comment.commentId]"></app-edit-button></td>
-                        <td><app-delete-button (click)="removeComment(comment.commentId)"></app-delete-button></td>
-
-
-                    </tr>
-                </tbody>
-            </table>
-            <div>
-                <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
-            </div>
+            
+            <app-table [titleList]="titleList" [gridList]="comments" [notUser]="true" (onDetail)="detailComment($event)" (onEdit)="editComment($event)" (onDelete)="deleteComment($event)"></app-table>
         </div>
     </div>
 </div>
+
+
+
