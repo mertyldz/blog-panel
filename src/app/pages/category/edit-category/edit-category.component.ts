@@ -39,7 +39,6 @@ export class EditCategoryComponent {
   update() {
     this.editedCategory = this.updateCategoryForm.value;
     this.categoryService.updateCategory(this.selectedId, this.editedCategory);
-    alert('Kullanıcı düzenlendi!');
     this.router.navigateByUrl('/category');
   }
 }

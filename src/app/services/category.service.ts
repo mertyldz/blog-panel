@@ -64,6 +64,7 @@ export class CategoryService {
     this.categories[index].name= category.name;
     this.categories[index].categoryId= category.categoryId;
     this.categories[index].creationDate= category.creationDate;
+    alert("Kategori başarıyla güncellendi!")
   }
 
   addCategory(category:Category){
