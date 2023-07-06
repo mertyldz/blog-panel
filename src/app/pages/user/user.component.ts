@@ -28,8 +28,4 @@ export class UserComponent implements OnInit{
   deleteUser(item:any){
     this.router.navigate(['/user/' + item.userId]);
   }
-
-  removeUser(id:number){this.userService.deleteUser(id)}
-  updateUser(id:number){console.log(`${id} + " güncellendi!`)}
-   
 }
