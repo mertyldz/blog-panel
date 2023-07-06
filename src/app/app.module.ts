@@ -32,6 +32,7 @@ import { DeleteButtonComponent } from './commons/delete-button/delete-button.com
 import { EditButtonComponent } from './commons/edit-button/edit-button.component';
 import { DetailButtonComponent } from './commons/detail-button/detail-button.component';
 import { TableComponent } from './commons/table/table.component';
+import { GeneralHeaderPipe } from './pipes/general-header.pipe';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { TableComponent } from './commons/table/table.component';
     DeleteButtonComponent,
     EditButtonComponent,
     DetailButtonComponent,
-    TableComponent
+    TableComponent,
+    GeneralHeaderPipe
   ],
   imports: [
     BrowserModule,

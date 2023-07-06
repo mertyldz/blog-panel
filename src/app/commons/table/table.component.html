@@ -1,10 +1,9 @@
-<div class="col-md-9">
     <table class="table table-hover text-center">
         <thead>
-            <th *ngFor="let title of titleList">{{title}}</th>
-            <th *ngIf="notUser">DETAY</th>
-            <th>DÜZENLE</th>
-            <th>SİL</th>
+            <th *ngFor="let title of titleList">{{title | generalHeader}}</th>
+            <th *ngIf="notUser">Detay</th>
+            <th>Düzenle</th>
+            <th>Sil</th>
 
         </thead>
         <tbody>
