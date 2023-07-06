@@ -1,0 +1,37 @@
+<div class="col-md-9">
+    <table class="table table-hover text-center">
+        <thead>
+            <th *ngFor="let title of titleList">{{title}}</th>
+            <th *ngIf="notUser">DETAY</th>
+            <th>DÜZENLE</th>
+            <th>SİL</th>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let grid of gridList">
+                <td *ngFor="let title of titleList">{{grid[title]}}</td>
+                <td *ngIf="notUser"><app-detail-button (click)="detail(grid)"></app-detail-button></td>
+                <td ><app-edit-button (click)="edit(grid)"></app-edit-button></td>
+                <td ><app-delete-button (click)="delete(grid)"></app-delete-button></td>
+            </tr>
+        </tbody>
+    </table>
+        <!-- <tbody *ngFor="let category of categories| paginate: {itemsPerPage:10, currentPage:pageNumber}">
+            <tr>
+
+                <td>{{category.categoryId}}</td>
+                <td>{{category.name}}</td>
+                <td>{{category.creationDate | date:'dd/MM/yyyy'}}</td>
+                <td><app-detail-button [routerLink]="['/category/detail', category.categoryId]"> </app-detail-button>
+                </td>
+                <td><app-edit-button (click)="updateCategory()"
+                        [routerLink]="['/category/edit', category.categoryId]"></app-edit-button></td>
+                <td><app-delete-button (click)="removeCategory(category.categoryId)"></app-delete-button></td>
+
+            </tr>
+        </tbody>
+    </table> -->
+
+    <div class="text-center">
+        <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+    </div>
