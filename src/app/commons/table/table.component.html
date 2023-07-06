@@ -11,9 +11,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let grid of gridList | paginate:{itemsPerPage:10, currentPage:pageNumber}">
-                <ng-container *ngFor="let title of titleList">
-                    <td  *ngIf="title not in booleanList">{{grid[title]}}</td>
-                </ng-container>
+                <td *ngFor="let title of titleList">{{grid[title]}}</td>
                 <td *ngIf="boolTitle==='isActive'">{{grid[boolTitle] | userboolean}}</td>
                 <td *ngIf="boolTitle==='isPublished'">{{grid[boolTitle] | published}}</td>
                 <td *ngIf="boolTitle==='isConfirmed'">{{grid[boolTitle] | commentconfirm}}</td>
