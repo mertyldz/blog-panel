@@ -20,7 +20,7 @@ export class UpdatePostComponent {
   selectedPost:Post;
   updatePostForm:FormGroup;
   userList:User[]=this.userService.getUserList();
-  categoryList: Category[]= this.categoryService.getCategories();
+  categoryList: Category[]= [];
   isPublished: PublishedStatus[] = [
     { status: 'Yayında', isPublished: true },
     { status: 'Yayında Değil', isPublished: false },
@@ -30,6 +30,7 @@ export class UpdatePostComponent {
   constructor(private activatedRoute:ActivatedRoute, private postService:PostService, fb:FormBuilder, private userService:UserService, private categoryService:CategoryService){
     this.selectedPostId=Number(activatedRoute.snapshot.paramMap.get("id"));
     this.selectedPost = this.postService.getPostById(this.selectedPostId);
+    this.categoryService.getCategories().subscribe(x=>this.categoryList=x);
 
     this.updatePostForm=fb.group({
       postId:this.selectedPost.postId,

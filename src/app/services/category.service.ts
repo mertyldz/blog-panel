@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Category } from '../pages/category/category';
 import { Post } from '../pages/post/post';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +32,8 @@ export class CategoryService {
 
   constructor(private router:Router) { }
 
-  getCategories(){
-    return this.categories;
+  getCategories():Observable<Category[]>{
+    return of(this.categories);
   }
   
   getIndex(id: number): number {

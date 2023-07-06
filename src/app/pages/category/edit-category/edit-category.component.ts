@@ -23,7 +23,7 @@ export class EditCategoryComponent {
     private router: Router
   ) {
     this.selectedId = Number(activatedRoute.snapshot.paramMap.get('id'));
-    this.categories = this.categoryService.getCategories();
+    this.categoryService.getCategories().subscribe(x=>this.categories=x);
     this.selectedCategory = this.categoryService.getCategoryById(this.selectedId);
 
     this.updateCategoryForm = fb.group({
