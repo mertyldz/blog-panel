@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../pages/user/user';
 import { CommentService } from './comment.service';
 import { PostService } from './post.service';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -91,8 +92,8 @@ export class UserService {
     return -1;
   }
 
-  getUserList(): User[] {
-    return this.userList;
+  getUserList(): Observable<User[]> {
+    return of(this.userList);
   }
 
   deleteUser(id: number): void {

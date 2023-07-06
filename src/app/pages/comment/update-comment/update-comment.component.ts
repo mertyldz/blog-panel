@@ -15,7 +15,7 @@ import { User } from '../../user/user';
 export class UpdateCommentComponent{
 
 
-  userList:User[]=this.userService.getUserList();
+  userList:User[]=[];
   confirmMenu: Confirmation[] = [
     { status: 'Onaylandı', value: true },
     { status: 'Onaylanmadı', value: false }
@@ -29,6 +29,7 @@ export class UpdateCommentComponent{
 
 
   constructor(fb: FormBuilder, private activatedRoute:ActivatedRoute, private commentService:CommentService, private userService:UserService) {
+    this.userService.getUserList().subscribe(x=>this.userList=x);
     this.selectedCommentId=Number(activatedRoute.snapshot.paramMap.get("id"));
     this.commentService.getComments().subscribe(x=>this.comments=x);
     this.selectedComment= this.commentService.getCommentById(this. selectedCommentId);

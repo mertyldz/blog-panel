@@ -11,16 +11,20 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
 })
 export class UpdateUserComponent {
   activeId = Number(this.activatedRoute.snapshot.paramMap.get("id"));
-  selectedUser = this.userService.getUserList()[this.userService.getIndex(this.activeId)];
+  userList:User[]=[];
 
   updateUserForm:FormGroup;
   constructor(fb:FormBuilder, private userService:UserService, private activatedRoute: ActivatedRoute,private router:Router){ 
+    this.userService.getUserList().subscribe(x=>this.userList=x);
+    let selectedUser:User = this.userList[this.userService.getIndex(this.activeId)];
+
+
     this.updateUserForm=fb.group({
-      userId: this.selectedUser.userId,
-      username: this.selectedUser.username,
-      email: this.selectedUser.email,
-      creationDate: this.selectedUser.creationDate,
-      isActive: this.selectedUser.isActive
+      userId: selectedUser.userId,
+      username: selectedUser.username,
+      email: selectedUser.email,
+      creationDate: selectedUser.creationDate,
+      isActive: selectedUser.isActive
     })
   }
 

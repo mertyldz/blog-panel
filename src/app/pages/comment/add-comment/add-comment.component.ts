@@ -13,7 +13,7 @@ import { User } from '../../user/user';
 export class AddCommentComponent {
   addCommentForm: FormGroup;
   addNewComment: Comment;
-  userList:User[]=this.userService.getUserList();
+  userList:User[]=[];
 
 
   confirmMenu: Confirmation[] = [
@@ -23,6 +23,7 @@ export class AddCommentComponent {
 
   constructor(fb: FormBuilder, private commentService: CommentService, private userService:UserService) {
     let generateId=this.commentService.getLastId() + 1; 
+    this.userService.getUserList().subscribe(x=>this.userList=x);
 
     this.addCommentForm = fb.group({
       commentId: generateId,

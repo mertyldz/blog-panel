@@ -16,7 +16,7 @@ import { last, map } from 'rxjs';
 })
 export class AddPostComponent {
   addPostForm: FormGroup;
-  userList:User[]=this.userService.getUserList();
+  userList:User[]=[];
   categoryList: Category[]= [];
   post: Post = {
     postId: 0,
@@ -35,6 +35,7 @@ export class AddPostComponent {
   ];
 
   constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService, private router:Router) {
+    this.userService.getUserList().subscribe(x=>this.userList=x);
     let tempPostId;
     this.postService.getPosts().subscribe(x=> tempPostId=x.length + 1)
     this.categoryService.getCategories().subscribe(x=>this.categoryList=x);
