@@ -30,6 +30,7 @@ import { CommentconfirmPipe } from './pipes/commentconfirm.pipe';
 import { ButtonComponent } from './commons/button/button.component';
 import { DeleteButtonComponent } from './commons/delete-button/delete-button.component';
 import { EditButtonComponent } from './commons/edit-button/edit-button.component';
+import { DetailButtonComponent } from './commons/detail-button/detail-button.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { EditButtonComponent } from './commons/edit-button/edit-button.component
     ButtonComponent,
     DeleteButtonComponent,
     EditButtonComponent,
+    DetailButtonComponent,
   ],
   imports: [
     BrowserModule,

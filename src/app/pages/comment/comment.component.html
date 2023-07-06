@@ -25,14 +25,9 @@
                         <td>{{comment.comment}}</td>
                         <td>{{comment.creationDate | date:'dd/MM/yyyy'}}</td>
                         <td>{{comment.isConfirmed | commentconfirm}}</td>
-                        <td><button type="button" class="btn btn-success"
-                                [routerLink]="['/comment/detail', comment.commentId]">Detay</button></td>
-                        <td>
-                            <app-edit-button [routerLink]="['/comment/edit', comment.commentId]"></app-edit-button>
-                        </td>
-                        <td>
-                            <app-delete-button (click)="removeComment(comment.commentId)"></app-delete-button>
-                        </td>
+                        <td><app-detail-button [routerLink]="['/comment/detail', comment.commentId]"> </app-detail-button></td>
+                        <td><app-edit-button [routerLink]="['/comment/edit', comment.commentId]"></app-edit-button></td>
+                        <td><app-delete-button (click)="removeComment(comment.commentId)"></app-delete-button></td>
 
 
                     </tr>
