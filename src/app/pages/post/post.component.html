@@ -1,8 +1,9 @@
 <div class="container">
     <div class="row mt-3">
-        <div class="col-md-3"><app-aside [pageName]="'post'"></app-aside>
-        </div>
+        <div class="col-md-3"><app-aside [pageName]="'post'"></app-aside></div>
+
         <div class="col-md-9">
+
             <form class="d-flex" role="search">
                 <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search"
                     [(ngModel)]="filterPostId">
@@ -18,45 +19,8 @@
                     (click)="removeFilter()">Temizle</button>
             </form>
 
+            <app-table [titleList]="titleList" [gridList]="postList" [notUser]="true" (onDelete)="deleteUser($event)" (onEdit)="editUser($event)" (onDetail)="detailUser($event)"></app-table>
 
-            <table class="table table-hover text-center mt-3">
-                <thead>
-                    <th>POSTID</th>
-                    <th>USERID</th>
-                    <th>CATEGORYID</th>
-                    <th>BAŞLIK</th>
-                    <th>GÖRÜNTÜLENME</th>
-                    <th>TARİH</th>
-                    <th>YAYINLANMA</th>
-                    <th>DETAY</th>
-                    <th>DÜZENLE</th>
-                    <th>SİL</th>
-                </thead>
-
-                <tbody *ngFor="let post of postList | paginate: {itemsPerPage:10, currentPage:pageNumber}">
-                    <tr>
-                        <td><b>{{post.postId}}</b></td>
-                        <td>{{post.userId}}</td>
-                        <td>{{post.categoryId}}</td>
-                        <td>{{post.title}}</td>
-                        <td>{{post.viewCount}}</td>
-                        <td>{{post.creationDate | date:'dd/MM/yyyy'}}</td>
-                        <td>{{post.isPublished | published}}</td>
-                        <td><app-detail-button [routerLink]="['/post/', post.postId]"> </app-detail-button></td>
-                        <td><app-edit-button [routerLink]="['/post/update', post.postId]"></app-edit-button></td>
-                        <td><app-delete-button (click)="deleteUser(post.postId)"></app-delete-button></td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-            <div class="text-center">
-                <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
-            </div>
-
-        </div>
-
-        <div class="row">
         </div>
     </div>
 </div>

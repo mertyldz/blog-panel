@@ -11,7 +11,9 @@ import { filter, map } from 'rxjs';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  pageNumber: number = 1;
+  titleList:string[]=["postId", "userId", "categoryId", "title", "viewCount", "creationDate"]
+
+  pageNumber: number = 1; 
   postList: Post[] = [];
   nonFilteredPostList: Post[] = [];
   postId:number=0;
@@ -51,15 +53,28 @@ export class PostComponent implements OnInit {
     this.filter();
   }
 
-  deleteUser(id: number) {
-    if (this.commentService.calculateCommentNumber(id) === 0) {
-      this.postService.deleteUser(id);
+  editUser(item:any){
+    this.router.navigate(['/post/update/'+item.postId]);
+  }
+
+  detailUser(item:any){
+    this.router.navigate(['/post/'+item.postId]);
+  }
+
+  deleteUser(item:any){
+    if (this.commentService.calculateCommentNumber(item.postId) === 0) {
+      this.postService.deleteUser(item.postId);
     } else {
       alert(
         'Gönderiye ait yorum bulunmaktadır, silme işlemi gerçekleştirilemez!'
       );
     }
   }
+
+    
+
+
+  // Filtering methods
 
   filter() {
     this.router.navigate(['/post'], {
