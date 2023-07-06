@@ -34,7 +34,7 @@ export class GeneralHeaderPipe implements PipeTransform {
         return 'Ad';
         break;
       case 'commentId':
-        return 'Comment Id';
+        return 'Comment ID';
         break;
       case 'comment':
         return 'Yorum';
