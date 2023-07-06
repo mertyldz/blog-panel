@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from './category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -8,17 +9,28 @@ import { Category } from './category';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
+  titleList:string[]=["categoryId", "name", "creationDate"]
+  // , "DETAY", "DÜZENLE", "SİL"
+
   pageNumber:number=1;
   categories: Category[]=[]
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService, private router:Router) {}
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe(x=>this.categories=x);
   }
 
-  removeCategory(id:number){
-    this.categoryService.removeCategory(id)
+
+  editCategory(item:any){
+    this.router.navigate(['/category/edit/' + item.categoryId]);
   }
-  updateCategory(){}
+
+  deleteCategory(item:any){
+    this.categoryService.removeCategory(item.categoryId)
+  }
+
+  detailCategory(item:any){
+    this.router.navigate(['/category/edit/' + item.categoryId]);
+  }
 }

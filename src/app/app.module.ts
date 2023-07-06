@@ -31,6 +31,7 @@ import { ButtonComponent } from './commons/button/button.component';
 import { DeleteButtonComponent } from './commons/delete-button/delete-button.component';
 import { EditButtonComponent } from './commons/edit-button/edit-button.component';
 import { DetailButtonComponent } from './commons/detail-button/detail-button.component';
+import { TableComponent } from './commons/table/table.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { DetailButtonComponent } from './commons/detail-button/detail-button.com
     DeleteButtonComponent,
     EditButtonComponent,
     DetailButtonComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

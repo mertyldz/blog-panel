@@ -2,31 +2,7 @@
     <div class="row mt-3">
         <div class="col-md-3"><app-aside [pageName]="'category'"></app-aside></div> 
         <div class="col-md-9"> 
-            <table class="table table-hover text-center">
-                <thead>
-                    <th>CATEGORYID</th>
-                    <th>KATEGORİ İSMİ</th>
-                    <th>TARİH</th>
-                    <th>DETAY</th>
-                    <th>DÜZENLE</th>
-                    <th>SİL</th>
-                </thead>
-                <tbody *ngFor="let category of categories| paginate: {itemsPerPage:10, currentPage:pageNumber}">
-                    <tr>
-
-                        <td>{{category.categoryId}}</td>
-                        <td>{{category.name}}</td>
-                        <td>{{category.creationDate | date:'dd/MM/yyyy'}}</td>
-                        <td><app-detail-button [routerLink]="['/category/detail', category.categoryId]"> </app-detail-button></td>
-                        <td><app-edit-button (click)="updateCategory()"[routerLink]="['/category/edit', category.categoryId]"></app-edit-button></td>
-                        <td><app-delete-button (click)="removeCategory(category.categoryId)"></app-delete-button></td>
-                        
-                    </tr>
-                </tbody>
-            </table>
-            <div class="text-center">
-                <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
-            </div>          
+            <app-table [titleList]="titleList" [gridList]="categories" [notUser]="true" (onEdit)="editCategory($event)" (onDelete)="deleteCategory($event)" (onDetail)="detailCategory($event)"></app-table>   
         </div> 
      </div> 
 </div>
