@@ -30,7 +30,7 @@ export class UpdateCommentComponent{
 
   constructor(fb: FormBuilder, private activatedRoute:ActivatedRoute, private commentService:CommentService, private userService:UserService) {
     this.selectedCommentId=Number(activatedRoute.snapshot.paramMap.get("id"));
-    this.comments = this.commentService.getComments();
+    this.commentService.getComments().subscribe(x=>this.comments=x);
     this.selectedComment= this.commentService.getCommentById(this. selectedCommentId);
 
     this.editCommentForm = fb.group({

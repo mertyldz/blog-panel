@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Comment } from '../pages/comment/comment';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -810,8 +811,8 @@ comments:Comment[]=[
 ]
 constructor(private router:Router) { }
 
-getComments():Comment[] {
-  return this.comments;
+getComments():Observable<Comment[]> {
+  return of(this.comments);
 }
 getIndex(id: number): number {
   for (let i = 0; i < this.comments.length; i++) {
