@@ -42,10 +42,12 @@ export class GeneralHeaderPipe implements PipeTransform {
       case 'isConfirmed':
         return 'Onay';
         break;
-
-
-
-
+      case 'isActive':
+        return 'Aktif';
+        break;
+      case 'isPublished':
+        return 'Yayında';
+        break;
       default:
         return value;
         break;

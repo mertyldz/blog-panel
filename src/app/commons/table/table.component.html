@@ -1,6 +1,9 @@
     <table class="table table-hover text-center">
         <thead>
             <th *ngFor="let title of titleList">{{title | generalHeader}}</th>
+            <th *ngIf="boolTitle==='isActive'">Aktiflik</th>
+            <th *ngIf="boolTitle==='isPublished'">Yayın</th>
+            <th *ngIf="boolTitle==='isConfirmed'">Onay</th>
             <th *ngIf="notUser">Detay</th>
             <th>Düzenle</th>
             <th>Sil</th>
@@ -8,7 +11,12 @@
         </thead>
         <tbody>
             <tr *ngFor="let grid of gridList | paginate:{itemsPerPage:10, currentPage:pageNumber}">
-                <td *ngFor="let title of titleList">{{grid[title]}}</td>
+                <ng-container *ngFor="let title of titleList">
+                    <td  *ngIf="title not in booleanList">{{grid[title]}}</td>
+                </ng-container>
+                <td *ngIf="boolTitle==='isActive'">{{grid[boolTitle] | userboolean}}</td>
+                <td *ngIf="boolTitle==='isPublished'">{{grid[boolTitle] | published}}</td>
+                <td *ngIf="boolTitle==='isConfirmed'">{{grid[boolTitle] | commentconfirm}}</td>
                 <td *ngIf="notUser"><app-detail-button (click)="detail(grid)"></app-detail-button></td>
                 <td ><app-edit-button (click)="edit(grid)"></app-edit-button></td>
                 <td ><app-delete-button (click)="delete(grid)"></app-delete-button></td>

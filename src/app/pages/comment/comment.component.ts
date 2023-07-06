@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit{
-  titleList:string[]=["commentId", "postId", "userId", "comment", "creationDate", "isConfirmed"]
+  titleList:string[]=["commentId", "postId", "userId", "comment", "creationDate"]
 
   comments:Comment[]=[];
   pageNumber:number=1;

@@ -7,7 +7,7 @@
 
         <div class="col-md-9">
             <app-table [titleList]="titleList" [gridList]="users" [notUser]="false" (onDelete)="deleteUser($event)"
-                (onEdit)="editUser($event)"> </app-table>
+                (onEdit)="editUser($event)" [boolTitle]="'isActive'"> </app-table>
         </div>
     </div>
 </div>

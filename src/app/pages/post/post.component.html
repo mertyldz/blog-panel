@@ -19,7 +19,7 @@
                     (click)="removeFilter()">Temizle</button>
             </form>
 
-            <app-table [titleList]="titleList" [gridList]="postList" [notUser]="true" (onDelete)="deleteUser($event)" (onEdit)="editUser($event)" (onDetail)="detailUser($event)"></app-table>
+            <app-table [titleList]="titleList" [gridList]="postList" [notUser]="true" (onDelete)="deleteUser($event)" (onEdit)="editUser($event)" (onDetail)="detailUser($event)" [boolTitle]="'isPublished'"></app-table>
 
         </div>
     </div>

@@ -9,12 +9,13 @@ export class TableComponent implements OnInit{
   @Input() titleList:string[]=[];
   @Input() gridList:any[]=[];
   @Input() notUser:boolean=true;
+  @Input() boolTitle:string='';
   @Output() onDetail = new EventEmitter<any>();
   @Output() onEdit = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
 
   pageNumber:number=1;
-
+  booleanList:string[]= ['isActive', 'isConfirmed', 'isPublished'];
 
   ngOnInit(): void {
       
