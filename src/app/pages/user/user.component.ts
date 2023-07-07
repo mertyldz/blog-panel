@@ -22,10 +22,10 @@ export class UserComponent implements OnInit{
 }
 
   editUser(item:any){
-    this.userService.deleteUser(item.userId);
-  }
-
-  deleteUser(item:any){
     this.router.navigate(['/user/' + item.userId]);
+  }
+  
+  deleteUser(item:any){
+    this.userService.deleteUser(item.userId);
   }
 }
