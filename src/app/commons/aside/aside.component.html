@@ -1,24 +1,43 @@
 <div class="row">
-    <div class="w-50 min-vh-100 bg-dark">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark w-100 min-vh-100">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-4">Blog-Panel</span>
+        </a>
+        <hr>
         <ul class="nav nav-pills flex-column mb-auto">
-
             <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" [routerLink]="'/user/add'"
-                    [routerLinkActive]="'active'">Kullanıcı ekle</a>
+                <a class="nav-link text-white" aria-current="page" [routerLink]="'/user'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact : true}">Kullanıcı Listele</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" [routerLink]="'/category/add'"
-                    [routerLinkActive]="'active'">Kategori ekle</a>
+                <a class="nav-link text-white" aria-current="page" [routerLink]="'/user/add'" [routerLinkActive]="'active'" >Kullanıcı Ekle</a>
+            </li>
+            <hr>
+            <li class="nav-item">
+                <a class="nav-link text-white" [routerLink]="'/post'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact : true}">Gönderi
+                    Listele</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" aria-current="page" [routerLink]="'/post/add'"
-                    [routerLinkActive]="'active'">Post ekle</a>
+                    [routerLinkActive]="'active'">Gönderi Ekle</a>
+            </li>
+            <hr>
+
+            <li class="nav-item">
+                <a class="nav-link text-white" [routerLink]="'/category'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact : true}">Kategori
+                    Listele</a>
             </li>
             <li class="nav-item">
-            <li class="list-group-item">
+                <a class="nav-link text-white" aria-current="page" [routerLink]="'/category/add'"
+                    [routerLinkActive]="'active'">Kategori Ekle</a>
+            </li>
+            <hr>
+            <li class="nav-item">
+                <a class="nav-link text-white" [routerLink]="'/comment'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact : true}">Yorum
+                    Listele</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-white" aria-current="page" [routerLink]="'/comment/add'"
-                    [routerLinkActive]="'active'">Yorum ekle</a>
+                    [routerLinkActive]="'active'">Yorum Ekle</a>
             </li>
         </ul>
     </div>

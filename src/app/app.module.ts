@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './commons/navbar/navbar.component';
 import { UserComponent } from './pages/user/user.component';
 import { PostComponent } from './pages/post/post.component';
 import { CategoryComponent } from './pages/category/category.component';
@@ -37,7 +36,6 @@ import { GeneralHeaderPipe } from './pipes/general-header.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     UserComponent,
     PostComponent,
     CategoryComponent,
