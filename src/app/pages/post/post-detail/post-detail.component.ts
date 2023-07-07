@@ -31,9 +31,11 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.postId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    console.log(this.postId);
     this.post = this.postService.getPostById(this.postId);
-    console.log(this.post.categoryId);
+    console.log(this.post);
     this.categoryName = this.categoryService.getCategoryNameById(this.post.categoryId);
+    console.log(this.categoryName);
     this.username = this.userService.getUsernameById(this.post.userId);
     this.comments = this.commentService.filterCommentsByPostId(this.postId);
 

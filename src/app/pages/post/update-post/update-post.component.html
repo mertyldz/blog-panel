@@ -5,10 +5,7 @@
             <div class="col-md-9">
                 <form [formGroup]="updatePostForm" (submit)="updatePost()">
 
-                    <div class="mb-3">
-                        <label for="userId" class="form-label">postId</label>
-                        <input type="text" class="form-control" formControlName="postId">
-                    </div>
+
                     <!-- User Id Dropdown -->
                     <label class="form-label" for="categoryId">Kullanıcı</label>
                     <select class="form-select" formControlName="userId">
@@ -22,19 +19,19 @@
                     </select>
                     
                     <div class="mb-3">
-                        <label for="userId" class="form-label">title</label>
+                        <label for="userId" class="form-label">Başlık</label>
                         <input type="text" class="form-control" formControlName="title">
                     </div>
                     <div class="mb-3">
-                        <label for="userId" class="form-label">content</label>
+                        <label for="userId" class="form-label">İçerik</label>
                         <input type="text" class="form-control" formControlName="content">
                     </div>
                     <div class="mb-3">
-                        <label for="userId" class="form-label">viewCount</label>
+                        <label for="userId" class="form-label">Görüntülenme</label>
                         <input type="text" class="form-control" formControlName="viewCount">
                     </div>
                     <div class="mb-3">
-                        <label for="userId" class="form-label">creationDate</label>
+                        <label for="userId" class="form-label">Tarih</label>
                         <input type="text" class="form-control" formControlName="creationDate">
                     </div>
                     <div class="form-check" *ngFor="let publish of isPublished">

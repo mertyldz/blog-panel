@@ -564,10 +564,11 @@ export class PostService {
   constructor(private router:Router, private commentService:CommentService) {}
 
   getIndex(id: number): number {
+    console.log("Get index id: "+ id);
     for (let i = 0; i < this.posts.length; i++) {
       if (this.posts[i].postId === id) {
         return i;
-      }
+      } 
     }
     return -1;
   }
