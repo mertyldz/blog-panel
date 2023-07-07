@@ -3,6 +3,7 @@ import { User } from '../pages/user/user';
 import { CommentService } from './comment.service';
 import { PostService } from './post.service';
 import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -81,7 +82,7 @@ export class UserService {
     },
   ];
 
-  constructor(private postService:PostService, private commentService:CommentService) {}
+  constructor(private postService:PostService, private commentService:CommentService, private router:Router) {}
 
   getIndex(id: number): number {
     for (let i = 0; i < this.userList.length; i++) {
@@ -113,10 +114,15 @@ export class UserService {
     this.userList.push(user);
   }
 
-  updateUser(id: number, username: string, email: string) {
+  updateUser(id: number, newId:number, username: string, email: string, date:string, isActive:boolean) {
     let index = this.getIndex(id);
+    this.userList[index].userId = newId;
     this.userList[index].username = username;
     this.userList[index].email = email;
+    this.userList[index].creationDate = date;
+    this.userList[index].isActive = isActive;
+    alert("Başarıyla güncellendi.")
+    this.router.navigateByUrl('/user')
   }
 
   getLength(): number {
