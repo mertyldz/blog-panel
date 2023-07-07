@@ -13,9 +13,9 @@ import { CommentService } from 'src/app/services/comment.service';
   styleUrls: ['./post-detail.component.css'],
 })
 export class PostDetailComponent implements OnInit {
-  postId: number;
+  postId: number=0;
   post?: Post;
-  categoryName?: string;
+  categoryName: string='';
   username?: string;
   comments: Comment[] = [];
   showComment: ShowComment[]=[];
@@ -27,11 +27,12 @@ export class PostDetailComponent implements OnInit {
     private userService: UserService,
     private commentService: CommentService
   ) {
-    this.postId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
   }
 
   ngOnInit(): void {
+    this.postId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.post = this.postService.getPostById(this.postId);
+    console.log(this.post.categoryId);
     this.categoryName = this.categoryService.getCategoryNameById(this.post.categoryId);
     this.username = this.userService.getUsernameById(this.post.userId);
     this.comments = this.commentService.filterCommentsByPostId(this.postId);
