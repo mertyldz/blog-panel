@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PublishedPipe implements PipeTransform {
 
-  transform(value: boolean): unknown {
+  transform(value: boolean | undefined): unknown {
     if(value===true){
-      return "Yayın";
+      return "Yayında";
     } else {
       return "Arşiv"
     }

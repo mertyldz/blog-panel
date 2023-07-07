@@ -2,18 +2,18 @@
     <div class="row">
         <div class="col-md-3"> <app-aside [pageName]="'post'"></app-aside></div>
         <div class="col-md-9">
-            <div class="card text-body-secondary" style="width: 35rem;">
+            <div class="card text-body-secondary" style="width: 62rem;">
                 <div class="card-body">
-                  <h4 class="card-title"><b>Title:</b>{{post?.title}}</h4>
-                  <h5 class="card-subtitle mb-2 text-body-secondary"><b>Category: </b>{{categoryName}}</h5>
-                  <p class="card-text"><b>Content: </b>{{post?.content}}</p>
-                  <p><b>Username</b> : {{username}}</p>
-                  <p><b>Post Id : </b>{{post?.postId}}</p>
-                  <p><b>viewCount : </b>{{post?.viewCount}}</p>
-                  <p><b>creationDate : </b>{{post?.creationDate}}</p>
-                  <p><b>isPublished : </b>{{post?.isPublished}}</p>
+                  <h4 class="card-title"><b>Başlık:</b>{{post?.title}}</h4>
+                  <h5 class="card-subtitle mb-2 text-body-secondary"><b>Kategori: </b>{{categoryName}}</h5>
+                  <h5 class="card-text"><b>İçerik: </b>{{post?.content}}</h5>
+                  <p><b>Kullanıcı Adı</b> : {{username}}</p>
+                  <p><b>Post ID : </b>{{post?.postId}}</p>
+                  <p><b>Görüntülenme : </b>{{post?.viewCount}}</p>
+                  <p><b>Tarih : </b>{{post?.creationDate}}</p>
+                  <p><b>Yayın : </b>{{post?.isPublished | published}}</p>
                   <hr>
-                  <h4 class="card-subtitle mb-2 text-body-secondary">Comments</h4>
+                  <h4 class="card-subtitle mb-2 text-body-secondary">Yorumlar</h4>
                   <p *ngFor="let comment of showComment"><b>@{{comment.username}}: </b> {{comment.comment}}  </p>
 
                 </div>
