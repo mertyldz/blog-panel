@@ -856,7 +856,8 @@ addComment(comment:Comment){
 }
 
 updateComment(selectedId:number,comment:Comment){
-  this.comments[selectedId] = comment;
+  let index = this.getIndex(selectedId);
+  this.comments[index] = comment;
   alert("Yorum güncellendi!")
   this.router.navigateByUrl("/comment")
 }
@@ -869,6 +870,7 @@ anyCommentByUserId(userId:number): boolean{
   }
   return false;
 }
+
 getLastId(){
   return this.comments[this.comments.length-1].commentId;
 }
