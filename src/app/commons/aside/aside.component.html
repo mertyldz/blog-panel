@@ -1,59 +1,25 @@
-<ng-container *ngIf="pageName==='user'">
+<div class="row">
+    <div class="w-50 min-vh-100 bg-dark">
+        <ul class="nav nav-pills flex-column mb-auto">
 
-    <h3 class="text-center border p-3 bg-light">Kullanıcı Paneli</h3>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <a class="text-body" [routerLink]="'/user'" [routerLinkActive]="'text-primary'">Kullanıcıları
-                görüntüle</a>
-        </li>
-        <li class="list-group-item">
-            <a class="text-body" [routerLink]="'/user/add'" [routerLinkActive]="'text-primary'">Kullanıcı
-                ekle</a>
-    </ul>
+            <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" [routerLink]="'/user/add'"
+                    [routerLinkActive]="'active'">Kullanıcı ekle</a>
+            </li>
 
-</ng-container>
-
-<ng-container *ngIf="pageName==='category'">
-
-    <h3 class="text-center border p-3 bg-light">Kategori Paneli</h3>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <a class="text-body" [routerLink]="'/category'" [routerLinkActive]="'text-primary'">Kategorileri
-                görüntüle</a>
-        </li>
-        <li class="list-group-item">
-            <a class="text-body" [routerLink]="'/category/add'" [routerLinkActive]="'text-primary'">Kategori
-                ekle</a>
-    </ul>
-
-
-</ng-container>
-
-<ng-container *ngIf="pageName==='post'">
-
-    <h3 class="text-center border p-3 bg-light">Post Paneli</h3>
-<ul class="list-group">
-    <li class="list-group-item">
-        <a class="text-body" [routerLink]="'/post'" [routerLinkActive]="'text-primary'">Postları
-            görüntüle</a>
-    </li>
-    <li class="list-group-item">
-        <a class="text-body" [routerLink]="'/post/add'" [routerLinkActive]="'text-primary'">Post
-            ekle</a>
-</ul>
-</ng-container>
-
-<ng-container *ngIf="pageName==='comment'">
-    <h3 class="text-center border p-3 bg-light">Yorum Paneli</h3>
-    <ul class="list-group">
-        <li class="list-group-item">
-            <a class="text-body" [routerLink]="'/comment'" [routerLinkActive]="'text-primary'">Yorumları
-                görüntüle</a>
-        </li>
-        <li class="list-group-item">
-            <a class="text-body" [routerLink]="'/comment/add'" [routerLinkActive]="'text-primary'">Yorum
-                ekle</a>
-    </ul>
-    
-
-</ng-container>
+            <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" [routerLink]="'/category/add'"
+                    [routerLinkActive]="'active'">Kategori ekle</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" [routerLink]="'/post/add'"
+                    [routerLinkActive]="'active'">Post ekle</a>
+            </li>
+            <li class="nav-item">
+            <li class="list-group-item">
+                <a class="nav-link text-white" aria-current="page" [routerLink]="'/comment/add'"
+                    [routerLinkActive]="'active'">Yorum ekle</a>
+            </li>
+        </ul>
+    </div>
+</div>
