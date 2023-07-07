@@ -4,38 +4,38 @@
             <app-aside [pageName]="'user'"></app-aside>>
         </div>
 
+
         <div class="col-md-9 ">
-            <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()" class="bg-light border-success rounded ">
-                <h5 class="text-primary text-center py-3">Update User</h5>
+            <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
+                <div class="mb-3">
+                    <label for="userId" class="form-label">User ID</label>
+                    <input type="text" class="form-control" placeholder="Username" formControlName="userId">
+                </div>
 
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control mx-3" placeholder="Username" formControlName="userId">
+                <div class="mb-3">
+                    <label for="userId" class="form-label">Kullanıcı Adı</label>
+                    <input type="text" class="form-control" placeholder="Username" formControlName="username">
                 </div>
-                
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control mx-3" placeholder="Username" formControlName="username">
-                </div>
-                
 
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control mx-3" placeholder="E-mail" formControlName="email">
+                <div class="mb-3">
+                    <label for="userId" class="form-label">E-mail</label>
+                    <input type="text" class="form-control" placeholder="E-mail" formControlName="email">
                 </div>
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control mx-3" placeholder="Creation Date" formControlName="creationDate">
+
+                <div class="mb-3">
+                    <label for="userId" class="form-label">Tarih</label>
+                    <input type="text" class="form-control" formControlName="creationDate">
                 </div>
 
                 <div class="mb-3" *ngFor="let active of isActiveMenu">
-                <div class="form-check">
-                    <input type="radio" [value]="active.isActive" class="form-check-input" formControlName="isActive">
-                    <label class="form-check-label" for="isActive"> {{active.durum}}</label>
+                    <div class="form-check">
+                        <input type="radio" [value]="active.isActive" class="form-check-input"
+                            formControlName="isActive">
+                        <label class="form-check-label" for="isActive"> {{active.durum}}</label>
+                    </div>
                 </div>
-            </div>
-            
-
-
 
                 <app-button buttonName="Kaydet"></app-button>
-
             </form>
         </div>
 
