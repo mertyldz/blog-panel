@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Post } from '../pages/post/post';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { CommentService } from './comment.service';
 
 @Injectable({
   providedIn: 'root',
@@ -560,7 +561,7 @@ export class PostService {
     },
   ];
 
-  constructor(private router:Router) {}
+  constructor(private router:Router, private commentService:CommentService) {}
 
   getIndex(id: number): number {
     for (let i = 0; i < this.posts.length; i++) {
@@ -577,7 +578,15 @@ export class PostService {
 
   deleteUser(id: number): void {
     let index = this.getIndex(id);
-    this.posts.splice(index, 1);
+
+    if (this.commentService.calculateCommentNumber(id) === 0) {
+      this.posts.splice(index, 1);
+    } else {
+      alert(
+        'Gönderiye ait yorum bulunmaktadır, silme işlemi gerçekleştirilemez!'
+      );
+    }
+
   }
 
   getPostById(id: number) {

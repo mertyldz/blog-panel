@@ -3,7 +3,6 @@ import { PostService } from 'src/app/services/post.service';
 import { Post } from './post';
 import { CommentService } from 'src/app/services/comment.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-post',
@@ -11,12 +10,19 @@ import { filter, map } from 'rxjs';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-  titleList:string[]=["postId", "userId", "categoryId", "title", "viewCount", "creationDate"]
+  titleList: string[] = [
+    'postId',
+    'userId',
+    'categoryId',
+    'title',
+    'viewCount',
+    'creationDate',
+  ];
 
-  pageNumber: number = 1; 
+  pageNumber: number = 1;
   postList: Post[] = [];
   nonFilteredPostList: Post[] = [];
-  postId:number=0;
+  postId: number = 0;
 
   filterPostId: string = '';
   filterUserId: string = '';
@@ -35,6 +41,7 @@ export class PostComponent implements OnInit {
       .getPosts()
       .subscribe((x) => (this.nonFilteredPostList = x));
 
+    //get query params
     this.activatedRoute.queryParamMap.subscribe((query) => {
       if (query.get('categoryId') !== null) {
         this.filterCategoryId = String(query.get('categoryId'));
@@ -53,30 +60,21 @@ export class PostComponent implements OnInit {
     this.filter();
   }
 
-  editUser(item:any){
-    this.router.navigate(['/post/update/'+item.postId]);
+  editUser(item: any) {
+    this.router.navigate(['/post/update/' + item.postId]);
   }
 
-  detailUser(item:any){
-    this.router.navigate(['/post/'+item.postId]);
+  detailUser(item: any) {
+    this.router.navigate(['/post/' + item.postId]);
   }
 
-  deleteUser(item:any){
-    if (this.commentService.calculateCommentNumber(item.postId) === 0) {
-      this.postService.deleteUser(item.postId);
-    } else {
-      alert(
-        'Gönderiye ait yorum bulunmaktadır, silme işlemi gerçekleştirilemez!'
-      );
-    }
+  deleteUser(item: any) {
+    this.postService.deleteUser(item.postId);
   }
-
-    
-
 
   // Filtering methods
-
   filter() {
+    //navigate
     this.router.navigate(['/post'], {
       queryParams: {
         userId: this.filterUserId,
@@ -85,7 +83,7 @@ export class PostComponent implements OnInit {
       },
     });
 
-
+    //filtering
     if (this.filterPostId !== '') {
       this.postList = this.postList.filter(
         (x) => x.postId === Number(this.filterPostId)
@@ -101,8 +99,6 @@ export class PostComponent implements OnInit {
         (x) => x.categoryId === Number(this.filterCategoryId)
       );
     }
-
-    console.log(this.filterCategoryId);
   }
 
   removeFilter() {
