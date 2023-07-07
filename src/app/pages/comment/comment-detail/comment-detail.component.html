@@ -1,19 +1,14 @@
-<div class="container">
-    <div class="row mt-3">
-        <div class="col-md-3"><app-aside [pageName]="'comment'"></app-aside></div>
-        <div class="col-md-9">
-            <div class="card text-body-secondary" style="width: 35rem;">
-                <div class="card-body">
-                    <h5 class="card-title"><b>@User{{selectedComment.userId}}: </b>{{selectedComment.comment}}</h5>
-                    <hr>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"><b>Yorum
-                            Numarası:</b>{{selectedComment.commentId}}</h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"><b>Post Numarası: </b>{{selectedComment.postId}}
-                    </h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"><b>Oluşturulma Tarihi:
-                        </b>{{selectedComment.creationDate}}</h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"><b>Doğrulanmış Mı?:
-                        </b>{{selectedComment.isConfirmed}}</h6>
-                </div>
-            </div>
-        </div>
+<div class="card text-body-secondary" style="width: 35rem;">
+    <div class="card-body">
+        <h5 class="card-title"><b>@User{{selectedComment.userId}}: </b>{{selectedComment.comment}}</h5>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-body-secondary"><b>Yorum
+                Numarası:</b>{{selectedComment.commentId}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary"><b>Post Numarası: </b>{{selectedComment.postId}}
+        </h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary"><b>Oluşturulma Tarihi:
+            </b>{{selectedComment.creationDate}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary"><b>Doğrulanmış Mı?:
+            </b>{{selectedComment.isConfirmed}}</h6>
+    </div>
+</div>

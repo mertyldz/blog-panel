@@ -1,26 +1,17 @@
-<div class="container">
-    <div class="row mt-3">
-        <div class="col-md-3"><app-aside [pageName]="'post'"></app-aside></div>
+<form class="d-flex" role="search">
+    <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search"
+        [(ngModel)]="filterPostId">
 
-        <div class="col-md-9">
+    <input name="userId" class="form-control me-2" type="text" placeholder="User Id" aria-label="Search"
+        [(ngModel)]="filterUserId">
 
-            <form class="d-flex" role="search">
-                <input name="postId" class="form-control me-2" type="text" placeholder="Post Id" aria-label="Search"
-                    [(ngModel)]="filterPostId">
+    <input name="categoryId" class="form-control me-2" type="text" placeholder="Category Id" aria-label="Search"
+        [(ngModel)]="filterCategoryId">
 
-                <input name="userId" class="form-control me-2" type="text" placeholder="User Id" aria-label="Search"
-                    [(ngModel)]="filterUserId">
+    <button class="btn btn-outline-success mx-1" type="submit" (click)="filter()">Filtrele</button>
+    <button class="btn btn-outline-danger mx-1" type="submit" [routerLink]="'/post'"
+        (click)="removeFilter()">Temizle</button>
+</form>
 
-                <input name="categoryId" class="form-control me-2" type="text" placeholder="Category Id"
-                    aria-label="Search" [(ngModel)]="filterCategoryId">
-
-                <button class="btn btn-outline-success mx-1" type="submit" (click)="filter()">Filtrele</button>
-                <button class="btn btn-outline-danger mx-1" type="submit" [routerLink]="'/post'"
-                    (click)="removeFilter()">Temizle</button>
-            </form>
-
-            <app-table [titleList]="titleList" [gridList]="postList" [notUser]="true" (onDelete)="deleteUser($event)" (onEdit)="editUser($event)" (onDetail)="detailUser($event)" [boolTitle]="'isPublished'"></app-table>
-
-        </div>
-    </div>
-</div>
+<app-table [titleList]="titleList" [gridList]="postList" [notUser]="true" (onDelete)="deleteUser($event)"
+    (onEdit)="editUser($event)" (onDetail)="detailUser($event)" [boolTitle]="'isPublished'"></app-table>

@@ -1,13 +1,2 @@
-<div class="container">
-    <div class="row mt-3">
-        <div class="col-md-3">
-            <app-aside [pageName]="'user'"></app-aside>
-
-        </div>
-
-        <div class="col-md-9">
-            <app-table [titleList]="titleList" [gridList]="users" [notUser]="false" (onDelete)="deleteUser($event)"
-                (onEdit)="editUser($event)" [boolTitle]="'isActive'"> </app-table>
-        </div>
-    </div>
-</div>
+<app-table [titleList]="titleList" [gridList]="users" [notUser]="false" (onDelete)="deleteUser($event)"
+    (onEdit)="editUser($event)" [boolTitle]="'isActive'"> </app-table>

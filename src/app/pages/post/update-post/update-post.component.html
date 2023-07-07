@@ -1,47 +1,38 @@
-<div class="container">
-    <div class="row">
-        <div class="row mt-3">
-            <div class="col-md-3"><app-aside [pageName]="'post'"></app-aside></div>
-            <div class="col-md-9">
-                <form [formGroup]="updatePostForm" (submit)="updatePost()">
+<form [formGroup]="updatePostForm" (submit)="updatePost()">
 
 
-                    <!-- User Id Dropdown -->
-                    <label class="form-label" for="categoryId">Kullanıcı</label>
-                    <select class="form-select" formControlName="userId">
-                        <option *ngFor="let user of userList" value="{{user.userId}}">{{user.username}}</option>
-                    </select>
-    
-                    <!-- Category Id Dropdown -->
-                    <label class="form-label" for="categoryId">Kategori</label>
-                    <select class="form-select" formControlName="categoryId">
-                        <option *ngFor="let category of categoryList" value="{{category.categoryId}}">{{category.name}}</option>
-                    </select>
-                    
-                    <div class="mb-3">
-                        <label for="userId" class="form-label">Başlık</label>
-                        <input type="text" class="form-control" formControlName="title">
-                    </div>
-                    <div class="mb-3">
-                        <label for="userId" class="form-label">İçerik</label>
-                        <input type="text" class="form-control" formControlName="content">
-                    </div>
-                    <div class="mb-3">
-                        <label for="userId" class="form-label">Görüntülenme</label>
-                        <input type="text" class="form-control" formControlName="viewCount">
-                    </div>
-                    <div class="mb-3">
-                        <label for="userId" class="form-label">Tarih</label>
-                        <input type="text" class="form-control" formControlName="creationDate">
-                    </div>
-                    <div class="form-check" *ngFor="let publish of isPublished">
-                        <input type="radio" [value]="publish.isPublished" class="form-check-input" formControlName="isPublished">
-                        <label class="form-check-label" for="isPublished"> {{publish.status}}</label>
-                    </div>
-                    <app-button buttonName="Güncelle"></app-button>
+    <!-- User Id Dropdown -->
+    <label class="form-label" for="categoryId">Kullanıcı</label>
+    <select class="form-select" formControlName="userId">
+        <option *ngFor="let user of userList" value="{{user.userId}}">{{user.username}}</option>
+    </select>
 
-                </form>
-            </div>
+    <!-- Category Id Dropdown -->
+    <label class="form-label" for="categoryId">Kategori</label>
+    <select class="form-select" formControlName="categoryId">
+        <option *ngFor="let category of categoryList" value="{{category.categoryId}}">{{category.name}}</option>
+    </select>
+
+    <div class="mb-3">
+        <label for="userId" class="form-label">Başlık</label>
+        <input type="text" class="form-control" formControlName="title">
     </div>
-</div>
+    <div class="mb-3">
+        <label for="userId" class="form-label">İçerik</label>
+        <input type="text" class="form-control" formControlName="content">
+    </div>
+    <div class="mb-3">
+        <label for="userId" class="form-label">Görüntülenme</label>
+        <input type="text" class="form-control" formControlName="viewCount">
+    </div>
+    <div class="mb-3">
+        <label for="userId" class="form-label">Tarih</label>
+        <input type="text" class="form-control" formControlName="creationDate">
+    </div>
+    <div class="form-check" *ngFor="let publish of isPublished">
+        <input type="radio" [value]="publish.isPublished" class="form-check-input" formControlName="isPublished">
+        <label class="form-check-label" for="isPublished"> {{publish.status}}</label>
+    </div>
+    <app-button buttonName="Güncelle"></app-button>
 
+</form>
