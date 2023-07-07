@@ -4,7 +4,7 @@
         <div class="col-md-9">
             <div class="card text-body-secondary" style="width: 35rem;">
                 <div class="card-body">
-                    <h5 class="card-title"><b>@{{selectedUsername}}: </b>{{selectedComment.comment}}</h5>
+                    <h5 class="card-title"><b>@User{{selectedComment.userId}}: </b>{{selectedComment.comment}}</h5>
                     <hr>
                     <h6 class="card-subtitle mb-2 text-body-secondary"><b>Yorum
                             Numarası:</b>{{selectedComment.commentId}}</h6>
@@ -16,5 +16,4 @@
                         </b>{{selectedComment.isConfirmed}}</h6>
                 </div>
             </div>
-
         </div>

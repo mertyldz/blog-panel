@@ -12,10 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 export class CommentDetailComponent {
   selectedCommentId: number;
   selectedComment:Comment;
-  selectedUsername:string;
   constructor(private router: ActivatedRoute, private commentService:CommentService, private userService:UserService) {
     this.selectedCommentId = Number(this.router.snapshot.paramMap.get('id'));
     this.selectedComment= this.commentService.getCommentById(this.selectedCommentId);
-    this.selectedUsername=this.userService.getUsernameById(this.selectedComment.userId);
   }
 }

@@ -32,7 +32,7 @@ export class UpdateCommentComponent{
     this.userService.getUserList().subscribe(x=>this.userList=x);
     this.selectedCommentId=Number(activatedRoute.snapshot.paramMap.get("id"));
     this.commentService.getComments().subscribe(x=>this.comments=x);
-    this.selectedComment= this.commentService.getCommentById(this. selectedCommentId);
+    this.selectedComment= this.commentService.getCommentById(this.selectedCommentId);
 
     this.editCommentForm = fb.group({
       commentId: this.selectedComment.commentId,
