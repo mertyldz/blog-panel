@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Post } from '../../models/post';
 import { PostService } from 'src/app/services/post.service';
-import { User } from '../../../user/user';
+import { User } from '../../../user/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { Category } from '../../../category/models/category';
 import { CategoryService } from 'src/app/services/category.service';

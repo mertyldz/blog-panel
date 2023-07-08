@@ -5,7 +5,7 @@ import { CommentService } from 'src/app/services/comment.service';
 import { Comment } from '../../models/comment';
 import { Confirmation } from '../add-comment/add-comment.component';
 import { UserService } from 'src/app/services/user.service';
-import { User } from '../../../user/user';
+import { User } from '../../../user/models/user';
 
 @Component({
   selector: 'app-update-comment',

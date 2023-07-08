@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../pages/user/user';
+import { User } from '../pages/user/models/user';
 import { CommentService } from './comment.service';
 import { PostService } from './post.service';
 import { Observable, of } from 'rxjs';

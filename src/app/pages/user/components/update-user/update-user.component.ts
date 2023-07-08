@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
-import { User } from '../user';
+import { User } from '../../models/user';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Status } from '../add-user/add-user.component';
 

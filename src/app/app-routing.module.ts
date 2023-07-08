@@ -1,8 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserComponent } from './pages/user/user.component';
-import { AddUserComponent } from './pages/user/add-user/add-user.component';
-import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
+import { AddUserComponent } from './pages/user/components/add-user/add-user.component';
+import { UpdateUserComponent } from './pages/user/components/update-user/update-user.component';
 import { PostDetailComponent } from './pages/post/components/post-detail/post-detail.component';
 import { AddPostComponent } from './pages/post/components/add-post/add-post.component';
 import { AddCategoryComponent } from './pages/category/components/add-category/add-category.component';
@@ -15,6 +14,7 @@ import { UpdatePostComponent } from './pages/post/components/update-post/update-
 import { CategoryComponent } from './pages/category/components/list-category/category.component';
 import { CommentComponent } from './pages/comment/components/list-comment/comment.component';
 import { PostComponent } from './pages/post/components/list-post/post.component';
+import { UserComponent } from './pages/user/components/list-user/user.component';
 
 const routes: Routes = [
   { path: 'user', component: UserComponent },
