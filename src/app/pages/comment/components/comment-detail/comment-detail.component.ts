@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
-import { Comment } from '../comment';
+import { Comment } from '../../models/comment';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({

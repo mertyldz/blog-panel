@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Comment } from '../pages/comment/comment';
+import { Comment } from '../pages/comment/models/comment';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 

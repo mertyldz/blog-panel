@@ -4,7 +4,7 @@ import { PostService } from 'src/app/services/post.service';
 import { Post } from '../post';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserComponent } from '../../user/user.component';
-import { Category } from '../../category/components/models/category';
+import { Category } from '../../category/models/category';
 import { UserService } from 'src/app/services/user.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { User } from '../../user/user';

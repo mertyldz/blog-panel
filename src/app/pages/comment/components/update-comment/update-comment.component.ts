@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
-import { Comment } from '../comment';
+import { Comment } from '../../models/comment';
 import { Confirmation } from '../add-comment/add-comment.component';
 import { UserService } from 'src/app/services/user.service';
-import { User } from '../../user/user';
+import { User } from '../../../user/user';
 
 @Component({
   selector: 'app-update-comment',

@@ -4,10 +4,9 @@ import { Post } from '../post';
 import { PostService } from 'src/app/services/post.service';
 import { User } from '../../user/user';
 import { UserService } from 'src/app/services/user.service';
-import { Category } from '../../category/components/models/category';
+import { Category } from '../../category/models/category';
 import { CategoryService } from 'src/app/services/category.service';
-import { Route, Router } from '@angular/router';
-import { last, map } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-post',
