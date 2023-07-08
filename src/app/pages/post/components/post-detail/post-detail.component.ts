@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from '../../models/post';
-import { CategoryService } from 'src/app/services/category.service';
 import { UserService } from 'src/app/services/user.service';
 import { Comment } from '../../../comment/models/comment';
 import { CommentService } from 'src/app/services/comment.service';
+import { ShowComment } from '../../models/show-comment';
 
 @Component({
   selector: 'app-post-detail',
@@ -23,15 +23,13 @@ export class PostDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private postService: PostService,
-    private categoryService: CategoryService,
     private userService: UserService,
     private commentService: CommentService
   ) {
   }
 
   ngOnInit(): void {
-    this.postId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.post = this.postService.getPostById(this.postId);
+    this.post = this.postService.detailPost;
     this.comments = this.commentService.filterCommentsByPostId(this.postId);
 
     // get name of users that comment
@@ -39,11 +37,5 @@ export class PostDetailComponent implements OnInit {
       let newComment:ShowComment= {username:this.userService.getUsernameById(comment.userId), comment:comment.comment};
       this.showComment.push(newComment);
     }
-    
   }
-}
-
-export interface ShowComment{
-  username:string,
-  comment:string,
 }

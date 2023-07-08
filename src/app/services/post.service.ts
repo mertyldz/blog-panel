@@ -561,6 +561,17 @@ export class PostService {
     },
   ];
 
+  public detailPost:Post={
+    postId:0,
+    userId:0,
+    categoryId:0,
+    title:'',
+    content:'',
+    viewCount:0,
+    creationDate:'',
+    isPublished:false
+  }
+
   constructor(private router:Router, private commentService:CommentService) {}
 
   getIndex(id: number): number {

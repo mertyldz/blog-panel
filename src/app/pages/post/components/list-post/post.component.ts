@@ -65,6 +65,7 @@ export class PostComponent implements OnInit {
   }
 
   detailUser(item: any) {
+    this.postService.detailPost=item;
     this.router.navigate(['/post/' + item.postId]);
   }
 

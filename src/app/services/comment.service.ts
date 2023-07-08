@@ -904,7 +904,7 @@ export class CommentService {
     },
   ];
 
-  detailComment: Comment = {
+  public detailComment: Comment = {
     commentId: 0,
     postId: 0,
     userId: 0,
