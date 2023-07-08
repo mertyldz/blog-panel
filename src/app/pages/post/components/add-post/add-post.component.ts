@@ -28,11 +28,6 @@ export class AddPostComponent {
     isPublished: false,
   };
 
-  isPublished: PublishedStatus[] = [
-    { status: 'Yayında', isPublished: true },
-    { status: 'Yayında Değil', isPublished: false },
-  ];
-
   constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService, private router:Router) {
     this.userService.getUserList().subscribe(x=>this.userList=x);
     let tempPostId;
@@ -53,15 +48,8 @@ export class AddPostComponent {
 
   }
 
-  save() {
-    this.post = this.addPostForm.value;
+  addPost(item:any) {
+    this.post = item.value;
     this.postService.addPost(this.post)
-    alert("Post başarıyla eklendi!")
-    this.router.navigateByUrl('/post')
   }
-
-}
-export interface PublishedStatus {
-  status: string;
-  isPublished: boolean;
 }

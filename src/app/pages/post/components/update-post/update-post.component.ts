@@ -7,7 +7,6 @@ import { Category } from '../../../category/models/category';
 import { UserService } from 'src/app/services/user.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { User } from '../../../user/models/user';
-import { PublishedStatus } from '../add-post/add-post.component';
 
 @Component({
   selector: 'app-update-post',
@@ -20,10 +19,7 @@ export class UpdatePostComponent {
   updatePostForm:FormGroup;
   userList:User[]=[];
   categoryList: Category[]= [];
-  isPublished: PublishedStatus[] = [
-    { status: 'Yayında', isPublished: true },
-    { status: 'Yayında Değil', isPublished: false },
-  ];
+
 
 
   constructor(private activatedRoute:ActivatedRoute, private postService:PostService, fb:FormBuilder, private userService:UserService, private categoryService:CategoryService){
@@ -44,8 +40,8 @@ export class UpdatePostComponent {
     })
   }
 
-  updatePost(){
-    this.selectedPost=this.updatePostForm.value;
+  updatePost(item:any){
+    this.selectedPost=item.value;
     this.postService.updatePost(this.selectedPostId, this.selectedPost);
   }
 

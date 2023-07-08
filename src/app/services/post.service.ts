@@ -596,6 +596,8 @@ export class PostService {
 
   addPost(post: Post) {
     this.posts.push(post);
+    alert("Post başarıyla eklendi!")
+    this.router.navigateByUrl('/post')
   }
 
   updatePost(postId:number, post:Post){

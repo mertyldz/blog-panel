@@ -7,6 +7,7 @@ import { UpdatePostComponent } from '../components/update-post/update-post.compo
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { PostFormComponent } from '../components/post-form/post-form.component';
 
 
 
@@ -15,7 +16,9 @@ import { RouterModule } from '@angular/router';
     PostComponent,
     PostDetailComponent,
     AddPostComponent,
-    UpdatePostComponent
+    UpdatePostComponent,
+    PostFormComponent,
+
   ],
   imports: [
     CommonModule,
