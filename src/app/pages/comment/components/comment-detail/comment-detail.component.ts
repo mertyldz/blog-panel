@@ -10,10 +10,9 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./comment-detail.component.css'],
 })
 export class CommentDetailComponent {
-  selectedCommentId: number;
-  selectedComment:Comment;
+  selectedComment:Comment;    
+  
   constructor(private router: ActivatedRoute, private commentService:CommentService, private userService:UserService) {
-    this.selectedCommentId = Number(this.router.snapshot.paramMap.get('id'));
-    this.selectedComment= this.commentService.getCommentById(this.selectedCommentId);
+    this.selectedComment = this.commentService.detailComment;
   }
 }

@@ -25,6 +25,7 @@ export class CommentComponent implements OnInit{
   }
 
   detailComment(item:any){
+    this.commentService.detailComment=item;
     this.router.navigate(['/comment/detail/'+item.commentId])
   }
 
