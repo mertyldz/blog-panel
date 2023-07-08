@@ -11,19 +11,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class EditCategoryComponent {
   updateCategoryForm: FormGroup;
-  editedCategory: Category;
   selectedId: number;
-  categories: Category[] = [];
   selectedCategory: Category;
 
-  constructor(
-    private categoryService: CategoryService,
-    private activatedRoute: ActivatedRoute,
-    fb: FormBuilder,
-    private router: Router
-  ) {
+  constructor(private categoryService: CategoryService, private activatedRoute: ActivatedRoute, fb: FormBuilder) {
     this.selectedId = Number(activatedRoute.snapshot.paramMap.get('id'));
-    this.categoryService.getCategories().subscribe(x=>this.categories=x);
     this.selectedCategory = this.categoryService.getCategoryById(this.selectedId);
 
     this.updateCategoryForm = fb.group({
@@ -31,12 +23,10 @@ export class EditCategoryComponent {
       name: this.selectedCategory.name,
       creationDate: this.selectedCategory.creationDate,
     });
-
-    // in order to stop error for not defining in constructor.
-    this.editedCategory = this.updateCategoryForm.value;
   }
 
   update(item:any) {
-    this.categoryService.updateCategory(this.selectedId, item.value);
+    let category:Category=item.value;
+    this.categoryService.updateCategory(this.selectedId, category);
   }
 }

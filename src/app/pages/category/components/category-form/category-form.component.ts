@@ -10,13 +10,10 @@ import { Category } from '../../models/category';
 export class CategoryFormComponent {
   @Input() buttonName:string='Kaydet';
   @Output() onSave = new EventEmitter<any>;
-  formGroupName:FormGroup;
+  @Input() categoryFormGroup:FormGroup;
+  
   constructor(fb:FormBuilder){
-    this.formGroupName=fb.group({
-      categoryId:0,
-      name:'',
-      creationDate:''
-    })
+    this.categoryFormGroup=fb.group({})
   }
 
   save(item:any){
