@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CategoryService } from 'src/app/services/category.service';
-import { Category } from '../category';
+import { Category } from '../models/category';
 
 @Component({
   selector: 'app-add-category',

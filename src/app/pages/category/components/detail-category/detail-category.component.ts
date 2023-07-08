@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
-import { Category } from '../category';
+import { Category } from '../models/category';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
