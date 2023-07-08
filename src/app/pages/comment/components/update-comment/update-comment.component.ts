@@ -13,19 +13,11 @@ import { Confirmation } from '../../models/confirmation';
   styleUrls: ['./update-comment.component.css'],
 })
 export class UpdateCommentComponent{
-
-
   userList:User[]=[];
-  confirmMenu: Confirmation[] = [
-    { status: 'Onaylandı', value: true },
-    { status: 'Onaylanmadı', value: false }
-  ];
-
   selectedCommentId:number;
   editCommentForm: FormGroup;
   comments:Comment[]=[];
   selectedComment:Comment;
-  updatedComment:Comment;
 
 
   constructor(fb: FormBuilder, private activatedRoute:ActivatedRoute, private commentService:CommentService, private userService:UserService) {
@@ -41,15 +33,11 @@ export class UpdateCommentComponent{
       comment: this.selectedComment.comment,
       creationDate: this.selectedComment.creationDate,
       isConfirmed: this.selectedComment.isConfirmed,
-    });
-
-    this.updatedComment=this.editCommentForm.value;
-    
+    });    
   }
 
-  
   editComment(item:any) {
-    this.updatedComment=item.value;
-    this.commentService.updateComment(this.selectedCommentId, this.updatedComment)
+    let comment:Comment=item.value;
+    this.commentService.updateComment(this.selectedCommentId, comment)
   }
 }

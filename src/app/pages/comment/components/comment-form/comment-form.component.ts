@@ -22,14 +22,7 @@ export class CommentFormComponent implements OnInit {
   userList: User[] = [];
 
   constructor(fb: FormBuilder, private userService: UserService) {
-    this.commentFormGroup = fb.group({
-    commentId: 0,
-    postId: 0,
-    userId: 0,
-    comment: '',
-    creationDate: '',
-    isConfirmed: false,
-    });
+    this.commentFormGroup = fb.group({});
   }
 
   ngOnInit(): void {

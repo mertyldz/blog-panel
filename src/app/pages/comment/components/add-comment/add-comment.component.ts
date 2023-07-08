@@ -13,14 +13,7 @@ import { Confirmation } from '../../models/confirmation';
 })
 export class AddCommentComponent {
   addCommentForm: FormGroup;
-  addNewComment: Comment;
   userList:User[]=[];
-
-
-  confirmMenu: Confirmation[] = [
-    { status: 'Onaylandı', value: true },
-    { status: 'Onaylanmadı', value: false }
-  ];
 
   constructor(fb: FormBuilder, private commentService: CommentService, private userService:UserService) {
     let generateId=this.commentService.getLastId() + 1; 
@@ -34,12 +27,9 @@ export class AddCommentComponent {
       creationDate: '',
       isConfirmed: false,
     });
-    this.addNewComment = this.addCommentForm.value;
   }
 
   addComment(item:any) {
     this.commentService.addComment(item.value);
   }
-
-
 }
