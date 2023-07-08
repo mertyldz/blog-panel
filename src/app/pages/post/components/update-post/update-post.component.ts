@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
-import { Post } from '../post';
+import { Post } from '../../models/post';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UserComponent } from '../../user/user.component';
-import { Category } from '../../category/models/category';
+import { UserComponent } from '../../../user/user.component';
+import { Category } from '../../../category/models/category';
 import { UserService } from 'src/app/services/user.service';
 import { CategoryService } from 'src/app/services/category.service';
-import { User } from '../../user/user';
+import { User } from '../../../user/user';
 import { PublishedStatus } from '../add-post/add-post.component';
 
 @Component({

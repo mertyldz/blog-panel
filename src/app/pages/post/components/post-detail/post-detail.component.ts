@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
-import { Post } from '../post';
+import { Post } from '../../models/post';
 import { CategoryService } from 'src/app/services/category.service';
 import { UserService } from 'src/app/services/user.service';
-import { Comment } from '../../comment/models/comment';
+import { Comment } from '../../../comment/models/comment';
 import { CommentService } from 'src/app/services/comment.service';
 
 @Component({

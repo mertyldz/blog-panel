@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Post } from '../post';
+import { Post } from '../../models/post';
 import { PostService } from 'src/app/services/post.service';
-import { User } from '../../user/user';
+import { User } from '../../../user/user';
 import { UserService } from 'src/app/services/user.service';
-import { Category } from '../../category/models/category';
+import { Category } from '../../../category/models/category';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
 
