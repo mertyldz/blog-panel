@@ -1,12 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Post } from '../../models/post';
 import { PostService } from 'src/app/services/post.service';
-import { User } from '../../../user/models/user';
-import { UserService } from 'src/app/services/user.service';
-import { Category } from '../../../category/models/category';
-import { CategoryService } from 'src/app/services/category.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-post',
@@ -15,16 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AddPostComponent {
   addPostForm: FormGroup;
-  userList:User[]=[];
-  categoryList: Category[]= [];
 
-  constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService) {
-    this.userService.getUserList().subscribe(x=>this.userList=x);
+  constructor(fb: FormBuilder, private postService: PostService) {
     let tempPostId;
-
     this.postService.getPosts().subscribe(x=> tempPostId=x.length + 1)
-    this.categoryService.getCategories().subscribe(x=>this.categoryList=x);
-
 
     this.addPostForm = fb.group({
       postId: (tempPostId),
@@ -36,7 +25,6 @@ export class AddPostComponent {
       creationDate: '',
       isPublished: false,
     });
-
   }
 
   addPost(item:any) {

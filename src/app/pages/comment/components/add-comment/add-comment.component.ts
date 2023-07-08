@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Comment } from '../../models/comment';
 import { CommentService } from 'src/app/services/comment.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../../user/models/user';
-import { Confirmation } from '../../models/confirmation';
 
 @Component({
   selector: 'app-add-comment',

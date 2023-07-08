@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Category } from '../../models/category';
-
 @Component({
   selector: 'app-category-form',
   templateUrl: './category-form.component.html',

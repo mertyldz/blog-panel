@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../models/user';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-update-user',
@@ -13,7 +13,7 @@ export class UpdateUserComponent {
   activeId = Number(this.activatedRoute.snapshot.paramMap.get("id"));
   updateUserForm:FormGroup;
 
-  constructor(fb:FormBuilder, private userService:UserService, private activatedRoute: ActivatedRoute,private router:Router){ 
+  constructor(fb:FormBuilder, private userService:UserService, private activatedRoute: ActivatedRoute){ 
     let selectedUser:User = this.userService.getUserById(this.activeId);
 
     this.updateUserForm=fb.group({

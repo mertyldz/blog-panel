@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
 import { Comment } from '../../models/comment';
-import { UserService } from 'src/app/services/user.service';
-import { User } from '../../../user/models/user';
-import { Confirmation } from '../../models/confirmation';
 
 @Component({
   selector: 'app-update-comment',
@@ -13,17 +10,13 @@ import { Confirmation } from '../../models/confirmation';
   styleUrls: ['./update-comment.component.css'],
 })
 export class UpdateCommentComponent{
-  userList:User[]=[];
   selectedCommentId:number;
   editCommentForm: FormGroup;
-  comments:Comment[]=[];
   selectedComment:Comment;
 
 
-  constructor(fb: FormBuilder, private activatedRoute:ActivatedRoute, private commentService:CommentService, private userService:UserService) {
-    this.userService.getUserList().subscribe(x=>this.userList=x);
+  constructor(fb: FormBuilder, private activatedRoute:ActivatedRoute, private commentService:CommentService) {
     this.selectedCommentId=Number(activatedRoute.snapshot.paramMap.get("id"));
-    this.commentService.getComments().subscribe(x=>this.comments=x);
     this.selectedComment= this.commentService.getCommentById(this.selectedCommentId);
 
     this.editCommentForm = fb.group({
