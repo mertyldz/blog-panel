@@ -1,11 +1,25 @@
-<div class="card text-body-secondary" style="width: 60rem;">
+<div class="card text-body-secondary">
   <div class="card-body">
-    <h5 class="card-title"><b>Kategori İsmi:</b>{{selectedCategory.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary"><b>Category ID: </b>{{selectedCategory.categoryId}}</h6>
-    <p class="card-text"><b>Oluşturulma Tarihi: </b>{{selectedCategory.creationDate}}</p>
-
-    <hr>
-    <h5 class="card-subtitle mb-2 text-body-secondary">Kategoriye Ait Toplam Gönderi Sayısı: {{totalPost}}</h5>
-    <app-button buttonName="Görüntüle" (click)="navigateToPosts()"></app-button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+          <h4 class="card-subtitle text-body-secondary text-capitalize"><b>Kategori İsmi: </b>{{selectedCategory.name}}
+          </h4>
+        </div>
+        <div class="col-md-2">
+          <p class="text-center fst-italic" style="background-color: #f5f5f5"><b>Category ID:
+            </b>{{selectedCategory.categoryId}}</p>
+        </div>
+        <p class="card-text mb-5">{{selectedCategory.creationDate}}</p>
+        
+        <hr>
+        <div class="col-md-10">
+          <h5 class="card-subtitle mt-2 text-body-secondary">Kategoriye Ait Toplam Gönderi Sayısı: {{totalPost}}</h5>
+        </div>
+        <div class="col-md-2">
+          <app-button class="text-end" buttonName="Görüntüle" (click)="navigateToPosts()"></app-button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
