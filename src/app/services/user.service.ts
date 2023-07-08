@@ -96,6 +96,10 @@ export class UserService {
   getUserList(): Observable<User[]> {
     return of(this.userList);
   }
+  getUserById(userId:number):User{
+    let index = this.getIndex(userId);
+    return this.userList[index];
+  }
 
   deleteUser(id: number): void {
     if (this.getLength() === 1) {

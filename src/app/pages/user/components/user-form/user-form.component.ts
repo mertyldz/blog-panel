@@ -17,7 +17,6 @@ export class UserFormComponent {
     {durum:"Pasif", isActive:false}
   ]
 
-
   constructor(fb:FormBuilder){
     this.userFormGroup=fb.group({})
   }
@@ -25,5 +24,4 @@ export class UserFormComponent {
   save(item:any){
     this.onSave.emit(item);
   }
-
 }
