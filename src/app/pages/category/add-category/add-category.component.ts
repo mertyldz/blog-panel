@@ -14,7 +14,7 @@ export class AddCategoryComponent {
 
   constructor(fb:FormBuilder, private categoryService:CategoryService){
     this.addCategoryForm=fb.group({
-      categoryId:this.categoryService.getCategories().subscribe(x=>x.length+1),
+      categoryId:this.categoryService.getLastId()+1,
       name:'',
       creationDate:'',
     })

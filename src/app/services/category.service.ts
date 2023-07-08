@@ -35,6 +35,10 @@ export class CategoryService {
   getCategories():Observable<Category[]>{
     return of(this.categories);
   }
+
+  getLastId(){
+    return this.categories[this.categories.length-1].categoryId;
+  }
   
   getIndex(id: number): number {
     for (let i = 0; i < this.categories.length; i++) {
