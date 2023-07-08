@@ -69,6 +69,7 @@ export class CategoryService {
     this.categories[index].categoryId= category.categoryId;
     this.categories[index].creationDate= category.creationDate;
     alert("Kategori başarıyla güncellendi!")
+    this.router.navigateByUrl('/category');
   }
 
   addCategory(category:Category){

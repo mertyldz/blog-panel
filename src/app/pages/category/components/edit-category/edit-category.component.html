@@ -1,11 +1,1 @@
-<form [formGroup]="updateCategoryForm" (submit)="update()">
-    <div class="mb-3">
-        <label class="form-label">Kategori Adı</label>
-        <input type="text" class="form-control" formControlName="name">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Oluşturulma Tarihi</label>
-        <input type="text" class="form-control" formControlName="creationDate">
-    </div>
-    <app-button buttonName="Güncelle"></app-button>
-</form>
+<app-category-form [formGroup]="updateCategoryForm" (onSave)="update($event)" [buttonName]="'Güncelle'"></app-category-form>

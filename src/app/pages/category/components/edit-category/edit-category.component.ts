@@ -36,9 +36,7 @@ export class EditCategoryComponent {
     this.editedCategory = this.updateCategoryForm.value;
   }
 
-  update() {
-    this.editedCategory = this.updateCategoryForm.value;
-    this.categoryService.updateCategory(this.selectedId, this.editedCategory);
-    this.router.navigateByUrl('/category');
+  update(item:any) {
+    this.categoryService.updateCategory(this.selectedId, item.value);
   }
 }
