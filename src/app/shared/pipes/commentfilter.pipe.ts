@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Comment } from '../pages/comment/comment';
+import { Comment } from '../../pages/comment/comment';
 
 @Pipe({
   name: 'commentfilter'

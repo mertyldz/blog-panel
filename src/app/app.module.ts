@@ -10,7 +10,6 @@ import { CommentComponent } from './pages/comment/comment.component';
 import { AddUserComponent } from './pages/user/add-user/add-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateUserComponent } from './pages/user/update-user/update-user.component';
-import { AsideComponent } from './commons/aside/aside.component';
 import { PostDetailComponent } from './pages/post/post-detail/post-detail.component';
 import { AddPostComponent } from './pages/post/add-post/add-post.component';
 import { AddCategoryComponent } from './pages/category/add-category/add-category.component';
@@ -21,17 +20,7 @@ import { AddCommentComponent } from './pages/comment/add-comment/add-comment.com
 import { UpdateCommentComponent } from './pages/comment/update-comment/update-comment.component';
 import { UpdatePostComponent } from './pages/post/update-post/update-post.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { CommentFilterPipe } from './pipes/commentfilter.pipe';
-import { UserbooleanPipe } from './pipes/userboolean.pipe';
-import { UsernamePipe } from './pipes/username.pipe';
-import { PublishedPipe } from './pipes/published.pipe';
-import { CommentconfirmPipe } from './pipes/commentconfirm.pipe';
-import { ButtonComponent } from './commons/button/button.component';
-import { DeleteButtonComponent } from './commons/delete-button/delete-button.component';
-import { EditButtonComponent } from './commons/edit-button/edit-button.component';
-import { DetailButtonComponent } from './commons/detail-button/detail-button.component';
-import { TableComponent } from './commons/table/table.component';
-import { GeneralHeaderPipe } from './pipes/general-header.pipe';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +31,6 @@ import { GeneralHeaderPipe } from './pipes/general-header.pipe';
     CommentComponent,
     AddUserComponent,
     UpdateUserComponent,
-    AsideComponent,
     PostDetailComponent,
     AddPostComponent,
     AddCategoryComponent,
@@ -51,25 +39,15 @@ import { GeneralHeaderPipe } from './pipes/general-header.pipe';
     CommentDetailComponent,
     AddCommentComponent,
     UpdateCommentComponent,
-    UpdatePostComponent,
-    CommentFilterPipe,
-    UserbooleanPipe,
-    UsernamePipe,
-    PublishedPipe,
-    CommentconfirmPipe,
-    ButtonComponent,
-    DeleteButtonComponent,
-    EditButtonComponent,
-    DetailButtonComponent,
-    TableComponent,
-    GeneralHeaderPipe
+    UpdatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
