@@ -1,16 +1,36 @@
-<div class="card text-body-secondary" style="width: 62rem;">
-  <div class="card-body">
-    <h4 class="card-title"><b>Başlık:</b>{{post?.title}}</h4>
-    <h5 class="card-subtitle mb-2 text-body-secondary"><b>Category ID: </b>{{post?.categoryId}}</h5>
-    <h5 class="card-text"><b>İçerik: </b>{{post?.content}}</h5>
-    <p><b>User ID</b> : {{post?.userId}}</p>
-    <p><b>Post ID : </b>{{post?.postId}}</p>
-    <p><b>Görüntülenme : </b>{{post?.viewCount}}</p>
-    <p><b>Tarih : </b>{{post?.creationDate}}</p>
-    <p><b>Yayın : </b>{{post?.isPublished | published}}</p>
-    <hr>
-    <h4 class="card-subtitle mb-2 text-body-secondary">Yorumlar</h4>
-    <p *ngFor="let comment of showComment"><b>@{{comment.username}}: </b> {{comment.comment}} </p>
+<div class="container">
+  <div class="row">
+    <div class="card text-body-secondary">
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h4 class="card-subtitle text-body-secondary text-capitalize"><b>{{post?.title}}</b> ({{post?.isPublished | published}})</h4>
+            </div>
+            <div class="col-md-2">
+              <p class="text-center fst-italic" style="background-color: #f5f5f5"><b>Category ID: </b>{{post?.categoryId}}</p>
+            </div>
+            <div class="col-md-2">
+              <p class="text-center fst-italic " style="background-color: #f5f5f5"><b>User ID</b> : {{post?.userId}}</p>
+            </div>
+            <div class="col-md-2">
+              <p class="text-center fst-italic" style="background-color: #f5f5f5"><b>Post ID : </b>{{post?.postId}}</p>
+            </div>
 
+            <div class="col-md-12">
+              <h5 class="my-4">{{post?.content}}</h5>
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-md-6"><p>{{post?.viewCount}} Görüntülenme</p></div>
+            <div class="col-md-6"><p class="text-end">{{post?.creationDate}}</p></div>
+          </div>
+        </div>
+        <hr>
+        <h5 class="card-subtitle my-4 text-body-secondary text-decoration-underline">Yorumlar</h5>
+        <p *ngFor="let comment of showComment"><b>@{{comment.username}}: </b> {{comment.comment}} </p>
+      </div>
+    </div>
   </div>
 </div>
