@@ -31,6 +31,7 @@ export class CategoryComponent implements OnInit {
   }
 
   detailCategory(item:any){
+    this.categoryService.detailData=item;
     this.router.navigate(['/category/detail/' + item.categoryId]);
   }
 }

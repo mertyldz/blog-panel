@@ -29,9 +29,15 @@ export class CategoryService {
     "name": "Construction Clean and Final Clean",
     "creationDate": "12/11/2017"
   }];
+  
+  detailData:Category={
+    categoryId: 0,
+    name:'',
+    creationDate:''
+  };
 
   constructor(private router:Router) { }
-
+  
   getCategories():Observable<Category[]>{
     return of(this.categories);
   }

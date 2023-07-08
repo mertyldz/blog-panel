@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from '../../models/category';
@@ -9,9 +9,9 @@ import { PostService } from 'src/app/services/post.service';
   templateUrl: './detail-category.component.html',
   styleUrls: ['./detail-category.component.css'],
 })
-export class DetailCategoryComponent {
+export class DetailCategoryComponent{
   selectedId: number;
-  selectedCategory: Category;
+  selectedCategory:Category;
   totalPost: number;
 
   constructor(
@@ -21,12 +21,10 @@ export class DetailCategoryComponent {
     private router: Router
   ) {
     this.selectedId = Number(activatedRoute.snapshot.paramMap.get('id'));
-    console.log(this.selectedId);
-    this.selectedCategory = this.categoryService.getCategoryById(
-      this.selectedId
-    );
+    this.selectedCategory = this.categoryService.detailData;
     this.totalPost = this.postService.getTotalPostByCategoryId(this.selectedId);
   }
+
 
   navigateToPosts() {
     console.log(this.selectedId);
