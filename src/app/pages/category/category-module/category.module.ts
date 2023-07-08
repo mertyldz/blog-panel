@@ -6,6 +6,7 @@ import { DetailCategoryComponent } from '../components/detail-category/detail-ca
 import { CategoryComponent } from '../components/list-category/category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CategoryFormComponent } from '../components/category-form/category-form.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     AddCategoryComponent,
     EditCategoryComponent,
     DetailCategoryComponent,
+    CategoryFormComponent,
+
   ],
   imports: [CommonModule,FormsModule,ReactiveFormsModule,SharedModule],
   exports:[]

@@ -10,7 +10,6 @@ import { Category } from '../../models/category';
 })
 export class AddCategoryComponent {
   addCategoryForm:FormGroup;
-  newCategory:Category;
 
   constructor(fb:FormBuilder, private categoryService:CategoryService){
     this.addCategoryForm=fb.group({
@@ -18,13 +17,9 @@ export class AddCategoryComponent {
       name:'',
       creationDate:'',
     })
-    this.newCategory=this.addCategoryForm.value;
   }
 
-
-  addCategory(){
-    this.newCategory=this.addCategoryForm.value;
-    this.categoryService.addCategory(this.newCategory);
+  addCategory(item:any){
+    this.categoryService.addCategory(item.value);
   }
-
 }
