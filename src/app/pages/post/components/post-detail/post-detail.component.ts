@@ -30,7 +30,7 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.post = this.postService.detailPost;
-    this.comments = this.commentService.filterCommentsByPostId(this.postId);
+    this.comments = this.commentService.filterCommentsByPostId(this.post.postId);
 
     // get name of users that comment
     for(let comment of this.comments){
