@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../models/user';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Status } from '../add-user/add-user.component';
+import { Status } from '../../models/status';
 
 @Component({
   selector: 'app-update-user',
@@ -35,7 +35,8 @@ export class UpdateUserComponent {
     })
   }
 
-  updateUser(){
-    this.userService.updateUser(this.activeId, this.updateUserForm.value.userId ,this.updateUserForm.value.username, this.updateUserForm.value.email, this.updateUserForm.value.creationDate, this.updateUserForm.value.isActive);
+  updateUser(item:any){
+    let user:User=item.value;
+    this.userService.updateUser(this.activeId,user);
   }
 }

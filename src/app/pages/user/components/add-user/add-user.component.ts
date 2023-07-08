@@ -3,6 +3,7 @@ import { UserService } from 'src/app/services/user.service';
 import { User } from '../../models/user';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Status } from '../../models/status';
 
 @Component({
   selector: 'app-add-user',
@@ -11,17 +12,10 @@ import { Router } from '@angular/router';
 })
 export class AddUserComponent {
   addUserForm: FormGroup;
-  user: User={
-    userId:0, username:'', email:'', creationDate:'', isActive: false};
 
-  isActiveMenu:Status[] = [
-    {durum:"Aktif", isActive:true},
-    {durum:"Pasif", isActive:false}
-  ]
-
-  constructor(private userService: UserService, fb: FormBuilder, private router:Router) {
+  constructor(private userService: UserService,fb: FormBuilder,private router: Router) {
     this.addUserForm = fb.group({
-      userId: this.userService.getIdOfLastUser()+1, // make id unique
+      userId: this.userService.getIdOfLastUser() + 1, // make id unique
       username: '',
       email: '',
       creationDate: '',
@@ -29,19 +23,8 @@ export class AddUserComponent {
     });
   }
 
-  addUser(user: User) {
+  addUser(item: any) {
+    let user: User = item.value;
     this.userService.addUser(user);
   }
-
-  save() {
-    this.user = this.addUserForm.value;
-    this.addUser(this.user);
-    alert("Başarıyla eklendi!")
-    this.router.navigateByUrl("/user")
-  }
-}
-
-export interface Status{
-  durum:string,
-  isActive:boolean
 }

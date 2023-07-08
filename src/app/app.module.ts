@@ -12,8 +12,7 @@ import { UserModule } from './pages/user/user-module/user.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-  ],
+    AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

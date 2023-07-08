@@ -112,15 +112,13 @@ export class UserService {
 
   addUser(user: User): void {
     this.userList.push(user);
+    alert('Başarıyla eklendi!');
+    this.router.navigateByUrl('/user');
   }
 
-  updateUser(id: number, newId:number, username: string, email: string, date:string, isActive:boolean) {
+  updateUser(id: number, user:User) {
     let index = this.getIndex(id);
-    this.userList[index].userId = newId;
-    this.userList[index].username = username;
-    this.userList[index].email = email;
-    this.userList[index].creationDate = date;
-    this.userList[index].isActive = isActive;
+    this.userList[index]= user;
     alert("Başarıyla güncellendi.")
     this.router.navigateByUrl('/user')
   }
