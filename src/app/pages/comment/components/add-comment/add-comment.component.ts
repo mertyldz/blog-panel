@@ -4,6 +4,7 @@ import { Comment } from '../../models/comment';
 import { CommentService } from 'src/app/services/comment.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../../user/models/user';
+import { Confirmation } from '../../models/confirmation';
 
 @Component({
   selector: 'app-add-comment',
@@ -36,13 +37,9 @@ export class AddCommentComponent {
     this.addNewComment = this.addCommentForm.value;
   }
 
-  addComment() {
-    this.addNewComment = this.addCommentForm.value;
-    this.commentService.addComment(this.addNewComment);
+  addComment(item:any) {
+    this.commentService.addComment(item.value);
   }
-}
 
-export interface Confirmation {
-  status: string;
-  value: boolean;
+
 }

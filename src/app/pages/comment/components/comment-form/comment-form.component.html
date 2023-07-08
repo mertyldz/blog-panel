@@ -1,0 +1,32 @@
+<form [formGroup]="commentFormGroup" (submit)="save(commentFormGroup)">
+    <div class="mb-3">
+        <label class="form-label">Comment ID</label>
+        <input type="text" class="form-control" formControlName="commentId">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Post ID</label>
+        <input type="text" class="form-control" formControlName="postId">
+    </div>
+
+    <!-- Username dropdown -->
+    <label class="form-label" for="categoryId">Kullanıcı</label>
+    <select class="form-select" formControlName="userId">
+        <option *ngFor="let user of userList" value="{{user.userId}}">{{user.username}}</option>
+    </select>
+
+    <div class="mb-3">
+        <label class="form-label">Yorum</label>
+        <input type="text" class="form-control" formControlName="comment">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Oluşturulma Tarihi</label>
+        <input type="text" class="form-control" formControlName="creationDate">
+    </div>
+
+    <label class="form-label">Onaylandı Mı?</label>
+    <div class="form-check" *ngFor="let confirm of confirmMenu">
+        <input type="radio" [value]="confirm.value" class="form-check-input" formControlName="isConfirmed">
+        <label class="form-check-label" for="isPublished"> {{confirm.status}}</label>
+    </div>
+    <app-button buttonName={{buttonName}}></app-button>
+</form>

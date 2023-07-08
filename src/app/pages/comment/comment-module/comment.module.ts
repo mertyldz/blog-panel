@@ -6,6 +6,7 @@ import { AddCommentComponent } from '../components/add-comment/add-comment.compo
 import { UpdateCommentComponent } from '../components/update-comment/update-comment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CommentFormComponent } from '../components/comment-form/comment-form.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommentDetailComponent,
     AddCommentComponent,
     UpdateCommentComponent,
+    CommentFormComponent
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, SharedModule],
 })

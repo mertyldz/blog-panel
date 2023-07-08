@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
 import { Comment } from '../../models/comment';
-import { Confirmation } from '../add-comment/add-comment.component';
 import { UserService } from 'src/app/services/user.service';
 import { User } from '../../../user/models/user';
+import { Confirmation } from '../../models/confirmation';
 
 @Component({
   selector: 'app-update-comment',
@@ -48,8 +48,8 @@ export class UpdateCommentComponent{
   }
 
   
-  editComment() {
-    this.updatedComment=this.editCommentForm.value;
+  editComment(item:any) {
+    this.updatedComment=item.value;
     this.commentService.updateComment(this.selectedCommentId, this.updatedComment)
   }
 }
