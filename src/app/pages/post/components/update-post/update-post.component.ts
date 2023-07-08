@@ -20,8 +20,6 @@ export class UpdatePostComponent {
   userList:User[]=[];
   categoryList: Category[]= [];
 
-
-
   constructor(private activatedRoute:ActivatedRoute, private postService:PostService, fb:FormBuilder, private userService:UserService, private categoryService:CategoryService){
     this.userService.getUserList().subscribe(x=>this.userList=x);
     this.selectedPostId=Number(activatedRoute.snapshot.paramMap.get("id"));

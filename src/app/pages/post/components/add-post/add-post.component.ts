@@ -17,20 +17,11 @@ export class AddPostComponent {
   addPostForm: FormGroup;
   userList:User[]=[];
   categoryList: Category[]= [];
-  post: Post = {
-    postId: 0,
-    userId: 0,
-    categoryId: 0,
-    title: '',
-    content: '',
-    viewCount: 0,
-    creationDate: '',
-    isPublished: false,
-  };
 
-  constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService, private router:Router) {
+  constructor(fb: FormBuilder, private postService: PostService, private userService:UserService, private categoryService:CategoryService) {
     this.userService.getUserList().subscribe(x=>this.userList=x);
     let tempPostId;
+
     this.postService.getPosts().subscribe(x=> tempPostId=x.length + 1)
     this.categoryService.getCategories().subscribe(x=>this.categoryList=x);
 
@@ -49,7 +40,7 @@ export class AddPostComponent {
   }
 
   addPost(item:any) {
-    this.post = item.value;
-    this.postService.addPost(this.post)
+    let post:Post = item.value;
+    this.postService.addPost(post)
   }
 }
