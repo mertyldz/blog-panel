@@ -1,10 +1,11 @@
-# GeleceğimAll
+# GeleceğimAll Project Details
 This project is created to complete the task for Front End - Angular part.
 There are 4 main section in the project:
 * User
 * Post
 * Category
 * Comment
+
 All sections have add & edit properties.
 Except users, all sections have detail sections to inspect.
 Post and comment sections can be filtered with id options.
