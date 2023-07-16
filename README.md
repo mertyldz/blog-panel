@@ -1,3 +1,20 @@
+# GeleceğimAll
+This project is created to complete the task for Front End - Angular part.
+There are 4 main section in the project:
+* User
+* Post
+* Category
+* Comment
+All sections have add & edit properties.
+Except users, all sections have detail sections to inspect.
+Post and comment sections can be filtered with id options.
+From category details, it is possible to redirect to relevant post list.
+There are some conditions to make deleting in sections.
+
+Services have been used to manage the data in every section of the project.
+Project has been managed on 5 main modules: category module, comment module, post module, user module and shared module.
+Pipes have been created to manage display format.
+
 # Blog
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
