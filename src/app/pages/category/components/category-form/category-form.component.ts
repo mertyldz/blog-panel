@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CategoryFormComponent {
   @Input() buttonName:string='Kaydet';
   @Output() onSave = new EventEmitter<any>;
+  // emit form
   @Input() categoryFormGroup:FormGroup;
   
   constructor(fb:FormBuilder){

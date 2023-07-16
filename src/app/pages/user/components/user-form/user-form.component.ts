@@ -10,6 +10,7 @@ import { Status } from '../../models/status';
 export class UserFormComponent {
   @Input() userFormGroup:FormGroup;
   @Input() buttonName:string='';
+  // emit user form group
   @Output() onSave = new EventEmitter<any>
 
   isActiveMenu:Status[] = [

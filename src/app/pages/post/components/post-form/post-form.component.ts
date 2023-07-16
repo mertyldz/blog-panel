@@ -14,6 +14,7 @@ import { PublishedStatus } from '../../models/published-status';
 export class PostFormComponent implements OnInit{
   @Input() buttonName:string='';
   @Output() onSave = new EventEmitter<any>;
+  // emit form to save
   @Input() postFormGroup:FormGroup;
   userList:User[]=[];
   categoryList:Category[]=[];

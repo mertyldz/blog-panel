@@ -12,6 +12,7 @@ import { User } from 'src/app/pages/user/models/user';
 export class CommentFormComponent implements OnInit {
   @Input() commentFormGroup: FormGroup;
   @Input() buttonName:string='';
+  // emit form
   @Output() onSave = new EventEmitter<any>;
 
 
