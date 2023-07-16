@@ -6,7 +6,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit{
+  // title list will take data columns name
   @Input() titleList:string[]=[];
+  // original data
   @Input() gridList:any[]=[];
   @Input() notUser:boolean=true;
   @Input() boolTitle:string='';
